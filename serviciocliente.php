@@ -29,6 +29,8 @@
   <div class="content"><!-- InstanceBeginEditable name="cuerpo" -->
     <h1>Servicio al cliente</h1>
     <p>Tenga e</p>
+    <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.cl/maps?f=q&amp;source=s_q&amp;hl=es-419&amp;geocode=&amp;q=talca+chile&amp;aq=&amp;sll=-36.847148,-72.973426&amp;sspn=0.149184,0.338173&amp;t=m&amp;ie=UTF8&amp;hq=&amp;hnear=Talca,+Maule&amp;ll=-35.430673,-71.657295&amp;spn=0.024478,0.036564&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe><iframe width="420" height="315" src="http://www.youtube.com/embed/opeWhzk_MRQ" frameborder="0" allowfullscreen></iframe>
+    <br /><small><a href="https://maps.google.cl/maps?f=q&amp;source=embed&amp;hl=es-419&amp;geocode=&amp;q=talca+chile&amp;aq=&amp;sll=-36.847148,-72.973426&amp;sspn=0.149184,0.338173&amp;t=m&amp;ie=UTF8&amp;hq=&amp;hnear=Talca,+Maule&amp;ll=-35.430673,-71.657295&amp;spn=0.024478,0.036564&amp;z=14&amp;iwloc=A" style="color:#0000FF;text-align:left">Ver mapa más grande</a></small>
   <!-- InstanceEndEditable -->
     <!-- end .content -->
   </div>
