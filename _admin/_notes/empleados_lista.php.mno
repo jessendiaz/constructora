@@ -1,5 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<info>
-	<infoitem key="UD_datosslider" value="name:idContador;datatype:int,name:strImagen;datatype:string,name:strDescripcion;datatype:string,name:intEstado;datatype:int" />
-	<infoitem key="UD_empleados" value="name:idempleado;datatype:int,name:strnombre;datatype:string,name:strcorreo;datatype:string,name:strarea;datatype:string" />
-</info>

@@ -74,3 +74,8 @@ input.textfieldMaxCharsState, .textfieldMaxCharsState input {
 .textfieldHintState input, input.textfieldHintState {
 	/*color: red !important;*/
 }
+.obligatorio {
+	color: #F00;
+	font-size: 9px;
+	vertical-align: top;
+}

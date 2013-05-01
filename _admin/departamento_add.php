@@ -37,15 +37,14 @@ if (isset($_SERVER['QUERY_STRING'])) {
 }
 
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
-  $insertSQL = sprintf("INSERT INTO tblempleados (strnombre, strcorreo, strarea) VALUES (%s, %s, %s)",
+  $insertSQL = sprintf("INSERT INTO tbldepartamento (strnombre, strcorreo) VALUES (%s, %s)",
                        GetSQLValueString($_POST['strnombre'], "text"),
-                       GetSQLValueString($_POST['strcorreo'], "text"),
-                       GetSQLValueString($_POST['strarea'], "text"));
+                       GetSQLValueString($_POST['strcorreo'], "text"));
 
   mysql_select_db($database_conexionconstructora, $conexionconstructora);
   $Result1 = mysql_query($insertSQL, $conexionconstructora) or die(mysql_error());
 
-  $insertGoTo = "empleados_lista.php";
+  $insertGoTo = "departamento_lista.php";
   if (isset($_SERVER['QUERY_STRING'])) {
     $insertGoTo .= (strpos($insertGoTo, '?')) ? "&" : "?";
     $insertGoTo .= $_SERVER['QUERY_STRING'];
@@ -78,44 +77,35 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
     <p>&nbsp;</p>
     <!-- end .sidebar1 --></div>
   <div class="content"><!-- InstanceBeginEditable name="partederechaadmin" -->
-    <h1>Agregar Empleado</h1>
+    <h1>Añadir Departamento</h1>
     <p>&nbsp;</p>
     <form action="<?php echo $editFormAction; ?>" method="post" name="form1" id="form1">
       <table align="center">
         <tr valign="baseline">
-          <td nowrap="nowrap" align="right">Nombre:</td>
-          <td><span id="sprytextfield1">
-          <input type="text" name="strnombre" value="" size="32" />
-          <span class="textfieldRequiredMsg">Se necesita un valor.</span><span class="textfieldMinCharsMsg">Llene el campo.</span></span></td>
+          <td width="54" align="right" nowrap="nowrap">Nombre:</td>
+          <td colspan="2"><span id="sprytextfield1">
+            <input type="text" name="strnombre" value="" size="32" />
+          <span class="textfieldRequiredMsg">Se necesita un valor.</span></span></td>
         </tr>
         <tr valign="baseline">
           <td nowrap="nowrap" align="right">Correo:</td>
-          <td><span id="sprytextfield2">
+          <td colspan="2"><span id="sprytextfield2">
           <input type="text" name="strcorreo" value="" size="32" />
           <span class="textfieldRequiredMsg">Se necesita un valor.</span><span class="textfieldInvalidFormatMsg">Formato no válido.</span></span></td>
         </tr>
         <tr valign="baseline">
-          <td nowrap="nowrap" align="right">Area:</td>
-          <td><select name="strarea" id="strarea">
-            <option value="1">Area1</option>
-            <option value="2">Area2</option>
-            <option value="3">Area3</option>
-            <option value="4">Informatica</option>
-          </select></td>
-        </tr>
-        <tr valign="baseline">
           <td nowrap="nowrap" align="right">&nbsp;</td>
-          <td align="center" ><a class="button" href="javascript:document.form1.submit();"><span>Insertar Empleado</span></a></td>
+          <td width="205"><input type="submit" value="Insertar departamento" /></td>
+          <td width="151">&nbsp;</td>
         </tr>
       </table>
       <input type="hidden" name="MM_insert" value="form1" />
     </form>
     <p>&nbsp;</p>
-<p>&nbsp;</p>
-  <script type="text/javascript">
-var sprytextfield1 = new Spry.Widget.ValidationTextField("sprytextfield1", "none", {minChars:3});
+    <script type="text/javascript">
+var sprytextfield1 = new Spry.Widget.ValidationTextField("sprytextfield1");
 var sprytextfield2 = new Spry.Widget.ValidationTextField("sprytextfield2", "email");
-  </script>
+    </script>
   <!-- InstanceEndEditable -->
     
     <!-- end .content --></div>

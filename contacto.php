@@ -32,10 +32,10 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 }
 
 mysql_select_db($database_conexionconstructora, $conexionconstructora);
-$query_empleados = "SELECT * FROM tblempleados";
-$empleados = mysql_query($query_empleados, $conexionconstructora) or die(mysql_error());
-$row_empleados = mysql_fetch_assoc($empleados);
-$totalRows_empleados = mysql_num_rows($empleados);
+$query_departamento = "SELECT * FROM tbldepartamento";
+$departamento = mysql_query($query_departamento, $conexionconstructora) or die(mysql_error());
+$row_departamento = mysql_fetch_assoc($departamento);
+$totalRows_departamento = mysql_num_rows($departamento);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -43,6 +43,9 @@ $totalRows_empleados = mysql_num_rows($empleados);
 <link href="SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css" />
 <link href="SpryAssets/SpryValidationTextarea.css" rel="stylesheet" type="text/css" />
 <script src="SpryAssets/SpryValidationTextarea.js" type="text/javascript"></script>
+
+
+
 <!-- InstanceBegin template="/Templates/plantillabase.dwt.php" codeOutsideHTMLIsLocked="false" -->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
@@ -73,42 +76,41 @@ $totalRows_empleados = mysql_num_rows($empleados);
   <div class="content"><!-- InstanceBeginEditable name="cuerpo" -->
     <h1>Contacto</h1>
     <p>Tenga e</p>
-    <form action="enviar.php" method="post"><table width="679" border="0">
+  <form action="enviar.php" method="post" id="form1" name="form1">
+    <table width="579" border="0">
       <tr>
-        <td width="230" align="right">*Nombre Completo:</td>
-        <td width="439"><span id="sprytextfield1">
-        <input name="nombre" type="text" id="nombre" size="30" />
-        <span class="textfieldRequiredMsg">Se necesita un valor.</span><span class="textfieldMinCharsMsg">Escriba su nombre.</span></span></td>
+        <td width="255" align="right"><span class="obligatorio">*</span>Nombre Completo:</td>
+        <td width="304"><span id="sprytextfield1">
+          <input name="nombre" type="text" required id="nombre" size="30"/>
+          <span class="textfieldRequiredMsg">Se necesita un valor.</span></span></td>
         </tr>
       <tr>
-        <td align="right">*Correo:</td>
+        <td align="right" valign="top"><span class="obligatorio">*</span>Correo:</td>
         <td><span id="sprytextfield2">
-        <input name="correo" type="text" id="correo" size="30" />
-        <span class="textfieldRequiredMsg">Se necesita un valor.</span><span class="textfieldInvalidFormatMsg">Formato no válido.</span></span></td>
+          <input name="correo" type="text" required id="correo" size="30"/>
+          <span class="textfieldInvalidFormatMsg">Formato no válido.</span></span></td>
         </tr>
       <tr>
-        <td align="right">Direcci&oacute;n:</td>
+        <td align="right">Direccion:</td>
         <td><input name="direccion" type="text" id="direccion" size="30" /></td>
         </tr>
       <tr>
-        <td align="right">Telefono:</td>
-        <td><span id="sprytextfield3">
-        <input name="telefono" type="text" id="telefono" size="30" />
-<span class="textfieldInvalidFormatMsg">Formato no válido.</span></span></td>
+        <td align="right">Telefono</td>
+        <td><input name="telefono" type="text" id="telefono" size="30" /></td>
         </tr>
       <tr>
-        <td align="right">Enviar al area de:</td>
-        <td><select name="menuarea" id="menuarea">
+        <td align="right">Mensaje al area:</td>
+        <td><select name="menudepartamento" id="menudepartamento">
           <?php
 do {  
 ?>
-          <option value="<?php echo $row_empleados['strarea']?>"><?php echo $row_empleados['strarea']?></option>
+          <option value="<?php echo $row_departamento['strnombre']?>"><?php echo $row_departamento['strnombre']?></option>
           <?php
-} while ($row_empleados = mysql_fetch_assoc($empleados));
-  $rows = mysql_num_rows($empleados);
+} while ($row_departamento = mysql_fetch_assoc($departamento));
+  $rows = mysql_num_rows($departamento);
   if($rows > 0) {
-      mysql_data_seek($empleados, 0);
-	  $row_empleados = mysql_fetch_assoc($empleados);
+      mysql_data_seek($departamento, 0);
+	  $row_departamento = mysql_fetch_assoc($departamento);
   }
 ?>
         </select></td>
@@ -116,24 +118,21 @@ do {
       <tr>
         <td align="right">Mensaje:</td>
         <td><span id="sprytextarea1">
-        <textarea name="mensaje" id="mensaje" cols="45" rows="5"></textarea>
-        <span id="countsprytextarea1">&nbsp;</span><span class="textareaMaxCharsMsg">Se ha superado el número máximo de caracteres.</span><span class="textareaRequiredMsg">Se necesita un valor.</span></span></td>
+          <textarea name="mensaje" id="mensaje" cols="45" rows="5"></textarea>
+          <span id="countsprytextarea1">&nbsp;</span><span class="textareaMaxCharsMsg">Se ha superado el número máximo de caracteres.</span></span></td>
         </tr>
       <tr>
-        <td>&nbsp;</td>
-        <td align="right"><a class="button" href="javascript:document.form1.submit();"><span>Enviar</span></a></td>
+        <td></td>
+        <td ><input class="btnimageningresar" type="submit" name="enviar" value="" /> </td>
+        <td width="6"></td>
         </tr>
-  </table>
-</form>
-    
-    
-   
-    <script type="text/javascript">
-var sprytextfield1 = new Spry.Widget.ValidationTextField("sprytextfield1", "none", {minChars:3});
-var sprytextfield2 = new Spry.Widget.ValidationTextField("sprytextfield2", "email");
-var sprytextfield3 = new Spry.Widget.ValidationTextField("sprytextfield3", "integer", {isRequired:false});
-var sprytextarea1 = new Spry.Widget.ValidationTextarea("sprytextarea1", {maxChars:500, counterId:"countsprytextarea1", counterType:"chars_remaining"});
-    </script>
+      </table>
+  </form>
+  <script type="text/javascript">
+var sprytextfield1 = new Spry.Widget.ValidationTextField("sprytextfield1");
+var sprytextfield2 = new Spry.Widget.ValidationTextField("sprytextfield2", "email", {isRequired:false});
+var sprytextarea1 = new Spry.Widget.ValidationTextarea("sprytextarea1", {isRequired:false, maxChars:500, counterId:"countsprytextarea1", counterType:"chars_remaining"});
+  </script>
   <!-- InstanceEndEditable -->
     <!-- end .content -->
   </div>
@@ -148,5 +147,5 @@ var sprytextarea1 = new Spry.Widget.ValidationTextarea("sprytextarea1", {maxChar
 </body>
 <!-- InstanceEnd --></html>
 <?php
-mysql_free_result($empleados);
+mysql_free_result($departamento);
 ?>

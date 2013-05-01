@@ -89,23 +89,24 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
       <table align="center">
         <tr valign="baseline">
           <td width="133" align="right" nowrap="nowrap">Imagen(990x394px):</td>
-          <td width="356"><input type="text" name="strImagen" value="" size="32" />
+          <td colspan="2"><input type="text" name="strImagen" value="" size="32" />
           <input type="button" name="button" id="button" value="Examinar" onclick="javascript:subirimagen();"/></td>
         </tr>
         <tr valign="baseline">
           <td nowrap="nowrap" align="right">Descripcion:</td>
-          <td><input type="text" name="strDescripcion" value="" size="32" /></td>
+          <td colspan="2"><input type="text" name="strDescripcion" value="" size="32" /></td>
         </tr>
         <tr valign="baseline">
           <td nowrap="nowrap" align="right">Estado:</td>
-          <td><select name="intEstado" id="intEstado">
+          <td colspan="2"><select name="intEstado" id="intEstado">
             <option value="1">Activado</option>
             <option value="0">Desactivado</option>
           </select></td>
         </tr>
         <tr valign="baseline">
           <td nowrap="nowrap" align="right">&nbsp;</td>
-          <td align="right"><a class="button" href="javascript:document.form1.submit();"><span>Insertar Imagen</span></a></td>
+          <td width="198" align="right"><a class="button" href="javascript:document.form1.submit();"><span>Insertar Imagen</span></a></td>
+          <td width="154" align="right">&nbsp;</td>
         </tr>
       </table>
       <input type="hidden" name="MM_insert" value="form1" />

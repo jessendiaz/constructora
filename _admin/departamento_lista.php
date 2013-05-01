@@ -32,10 +32,10 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 }
 
 mysql_select_db($database_conexionconstructora, $conexionconstructora);
-$query_empleados = "SELECT * FROM tblempleados";
-$empleados = mysql_query($query_empleados, $conexionconstructora) or die(mysql_error());
-$row_empleados = mysql_fetch_assoc($empleados);
-$totalRows_empleados = mysql_num_rows($empleados);
+$query_departamentos = "SELECT * FROM tbldepartamento";
+$departamentos = mysql_query($query_departamentos, $conexionconstructora) or die(mysql_error());
+$row_departamentos = mysql_fetch_assoc($departamentos);
+$totalRows_departamentos = mysql_num_rows($departamentos);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/plantillaadmin.dwt.php" codeOutsideHTMLIsLocked="false" -->
@@ -60,7 +60,7 @@ $totalRows_empleados = mysql_num_rows($empleados);
     <p>&nbsp;</p>
     <!-- end .sidebar1 --></div>
   <div class="content"><!-- InstanceBeginEditable name="partederechaadmin" -->
-  <script>
+   <script>
   function asegurar(){
 	  rc=confirm("¿Seguro desea eliminar?");
 	  return rc;
@@ -68,34 +68,27 @@ $totalRows_empleados = mysql_num_rows($empleados);
   
   
   </script>
-    <h1>Lista de empleados</h1>
-    <p><a href="empleado_add.php"><img src="../iconos/agregar.png" width="16" height="16" />Añadir empleado</a></p>
+    <h1>Lista de departamentos</h1>
+    <p><a href="departamento_add.php"><img src="../iconos/agregar.png" width="16" height="16" />Añadir departamento</a><br />
+    </p>
     <p>&nbsp; </p>
+    
     <table width="100%" border="0" cellpadding="2" cellspacing="2">
       <tr class="tablacabecera">
-        <td width="30%">nombre</td>
-        <td width="29%">correo</td>
-        <td width="22%">area</td>
+        <td width="44%">Departamento</td>
+        <td width="25%">Correo</td>
         <td width="19%">Acciones</td>
       </tr>
-      
       <?php do { ?>
-  <tr>
+        <tr>
+          <td><?php echo $row_departamentos['strnombre']; ?></td>
+          <td><?php echo $row_departamentos['strcorreo']; ?></td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="departamento_edit.php?recordID=<?php echo $row_departamentos['iddepartamento']; ?>"><img src="../iconos/editar32.png" width="32" height="32" /></a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="departamento_remove.php?recordID=<?php echo $row_departamentos['iddepartamento']; ?>"><img src="../iconos/eliminar.png" width="32" height="32" onclick="javascript:return asegurar();" /></a></td>
+        </tr>
+        <?php } while ($row_departamentos = mysql_fetch_assoc($departamentos)); ?>
+      </table>
     
-      <td><?php echo $row_empleados['strnombre']; ?>
-      </td>
-      <td><?php echo $row_empleados['strcorreo']; ?></td>
-      <td><?php echo $row_empleados['strarea']; ?></td>
-      <td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="empleado_edit.php?recordID=<?php echo $row_empleados['idempleado']; ?>"><img src="../iconos/editar32.png" width="32" height="32" /></a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="empleado_remove.php?recordID=<?php echo $row_empleados['idempleado']; ?>"><img src="../iconos/eliminar.png" width="32" height="32" onclick="javascript:return asegurar();" /></a></td>
-      
-  </tr>
-  <?php } while ($row_empleados = mysql_fetch_assoc($empleados)); ?>
-  
-  
-    </table>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-     <!-- InstanceEndEditable -->
+  <!-- InstanceEndEditable -->
     
     <!-- end .content --></div>
   <div class="footer">
@@ -104,5 +97,5 @@ $totalRows_empleados = mysql_num_rows($empleados);
 </body>
 <!-- InstanceEnd --></html>
 <?php
-mysql_free_result($empleados);
+mysql_free_result($departamentos);
 ?>

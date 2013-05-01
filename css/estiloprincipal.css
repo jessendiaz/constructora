@@ -142,13 +142,36 @@ a.button:hover span{
 	color: #FFF;
 }
 
-input{
+/*input{
 	background-image: url(../images/fondoimput.jpg);
 	background-repeat: repeat-x;
 	border: 1px solid #CCC;
-}
+}*/
 textarea{
 	background-image: url(../images/fondoimputtextarea.jpg);
 	background-repeat: repeat-x;
 	border: 1px solid #CCC;
 	}
+	.btnimageningresar{
+		
+	border-style: none;
+	border-color: inherit;
+	border-width: 0;
+	background: url('../images/btnenviarnegro.fw.png') no-repeat 0 0;
+	cursor: pointer;
+    width: 80px;
+    height: 40px;
+	text-align: left;
+}
+
+.btnimageningresar:hover{
+	border-style: none;
+	border-color: inherit;
+	border-width: 0;
+	background: url('../images/btnenviarblanco.fw.png') no-repeat 0 0;
+	cursor: pointer;
+	width: 80px;
+	height: 40px;
+	text-align: left;
+	padding-left: 1px;
+}

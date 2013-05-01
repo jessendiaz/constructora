@@ -52,7 +52,7 @@ $nombre = $_POST['nombre'];
 $correo = $_POST['correo'];
 $direccion = $_POST['direccion'];
 $telefono = $_POST['telefono'];
-$menuarea = $_POST['menuarea'];
+//$menuarea = $_POST['menudepartamento'];
 $comentario = $_POST['mensaje'];
 
 
