@@ -31,14 +31,21 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 }
 }
 
-mysql_select_db($database_conexionconstructora, $conexionconstructora);
-$query_departamentos = "SELECT * FROM tbldepartamento";
-$departamentos = mysql_query($query_departamentos, $conexionconstructora) or die(mysql_error());
-$row_departamentos = mysql_fetch_assoc($departamentos);
-$totalRows_departamentos = mysql_num_rows($departamentos);
-?>
+if ((isset($_GET['recordID'])) && ($_GET['recordID'] != "")) {
+  $deleteSQL = sprintf("DELETE FROM tbldepartamento WHERE iddepartamento=%s",
+                       GetSQLValueString($_GET['recordID'], "int"));
 
- <?php mysql_close($conexionconstructora);?>
+  mysql_select_db($database_conexionconstructora, $conexionconstructora);
+  $Result1 = mysql_query($deleteSQL, $conexionconstructora) or die(mysql_error());
+
+  $deleteGoTo = "departamento_lista.php";
+  if (isset($_SERVER['QUERY_STRING'])) {
+    $deleteGoTo .= (strpos($deleteGoTo, '?')) ? "&" : "?";
+    $deleteGoTo .= $_SERVER['QUERY_STRING'];
+  }
+  header(sprintf("Location: %s", $deleteGoTo));
+}
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/plantillaadmin.dwt.php" codeOutsideHTMLIsLocked="false" -->
 <head>
@@ -62,34 +69,9 @@ $totalRows_departamentos = mysql_num_rows($departamentos);
     <p>&nbsp;</p>
     <!-- end .sidebar1 --></div>
   <div class="content"><!-- InstanceBeginEditable name="partederechaadmin" -->
-   <script>
-  function asegurar(){
-	  rc=confirm("¿Seguro desea eliminar?");
-	  return rc;
-	  }
-  
-  
-  </script>
-    <h1>Lista de departamentos</h1>
-    <p><a href="departamento_add.php"><img src="../iconos/agregar.png" width="16" height="16" />Añadir departamento</a><br />
-    </p>
-    <p>&nbsp; </p>
+    <h1>Eliminando Departamento</h1>
     
-    <table width="100%" border="0" cellpadding="2" cellspacing="2">
-      <tr class="tablacabecera">
-        <td width="44%">Departamento</td>
-        <td width="25%">Correo</td>
-        <td width="19%">Acciones</td>
-      </tr>
-      <?php do { ?>
-        <tr>
-          <td><?php echo $row_departamentos['strnombre']; ?></td>
-          <td><?php echo $row_departamentos['strcorreo']; ?></td>
-          <td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="departamento_edit.php?recordID=<?php echo $row_departamentos['iddepartamento']; ?>"><img src="../iconos/editar32.png" width="32" height="32" /></a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="departamento_remove.php?recordID=<?php echo $row_departamentos['iddepartamento']; ?>"><img src="../iconos/eliminar.png" width="32" height="32" onclick="javascript:return asegurar();" /></a></td>
-        </tr>
-        <?php } while ($row_departamentos = mysql_fetch_assoc($departamentos)); ?>
-      </table>
-    
+    Procesando....
   <!-- InstanceEndEditable -->
     
     <!-- end .content --></div>
@@ -98,6 +80,3 @@ $totalRows_departamentos = mysql_num_rows($departamentos);
   <!-- end .container --></div>
 </body>
 <!-- InstanceEnd --></html>
-<?php
-mysql_free_result($departamentos);
-?>

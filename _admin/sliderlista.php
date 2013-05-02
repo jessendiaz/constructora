@@ -37,6 +37,7 @@ $datosslider = mysql_query($query_datosslider, $conexionconstructora) or die(mys
 $row_datosslider = mysql_fetch_assoc($datosslider);
 $totalRows_datosslider = mysql_num_rows($datosslider);
 ?>
+<?php  mysql_close($conexionconstructora);?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/plantillaadmin.dwt.php" codeOutsideHTMLIsLocked="false" -->
 <head>

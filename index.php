@@ -50,6 +50,8 @@ a:active {
     <a class="descargas" href="documentos/CURRICULUM.doc">documento a descargar</a>
     <p>Al slider solo se le pueden meter 4 imagenes, se le puede colocar una breve descripcion a cada imagen, ademas al presionar en alguna esta puede llevar a alguna otra pagina</p>
     <p>, a la cabecera le falta un eslogan y alguna otra peque&ntilde;a imagen si se desea, falta todo el contenido del cuerpo de esta pagina ademas de mejorar el menu del pie de pagina y el pie de pagina.</p>
+    
+
   <!-- InstanceEndEditable -->
     <!-- end .content -->
   </div>

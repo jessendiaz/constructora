@@ -31,14 +31,42 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 }
 }
 
+$editFormAction = $_SERVER['PHP_SELF'];
+if (isset($_SERVER['QUERY_STRING'])) {
+  $editFormAction .= "?" . htmlentities($_SERVER['QUERY_STRING']);
+}
+
+if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
+  $updateSQL = sprintf("UPDATE tbldepartamento SET strnombre=%s, strcorreo=%s WHERE iddepartamento=%s",
+                       GetSQLValueString($_POST['strnombre'], "text"),
+                       GetSQLValueString($_POST['strcorreo'], "text"),
+                       GetSQLValueString($_POST['iddepartamento'], "int"));
+
+  mysql_select_db($database_conexionconstructora, $conexionconstructora);
+  $Result1 = mysql_query($updateSQL, $conexionconstructora) or die(mysql_error());
+
+  $updateGoTo = "departamento_lista.php";
+  if (isset($_SERVER['QUERY_STRING'])) {
+    $updateGoTo .= (strpos($updateGoTo, '?')) ? "&" : "?";
+    $updateGoTo .= $_SERVER['QUERY_STRING'];
+  }
+  header(sprintf("Location: %s", $updateGoTo));
+}
+
 mysql_select_db($database_conexionconstructora, $conexionconstructora);
 $query_departamentos = "SELECT * FROM tbldepartamento";
 $departamentos = mysql_query($query_departamentos, $conexionconstructora) or die(mysql_error());
 $row_departamentos = mysql_fetch_assoc($departamentos);
+$totalRows_departamentos = mysql_num_rows($departamentos);$varDato_departamentos = "0";
+if (isset($_GET["recordID"])) {
+  $varDato_departamentos = $_GET["recordID"];
+}
+mysql_select_db($database_conexionconstructora, $conexionconstructora);
+$query_departamentos = sprintf("SELECT * FROM tbldepartamento WHERE tbldepartamento.iddepartamento=%s", GetSQLValueString($varDato_departamentos, "int"));
+$departamentos = mysql_query($query_departamentos, $conexionconstructora) or die(mysql_error());
+$row_departamentos = mysql_fetch_assoc($departamentos);
 $totalRows_departamentos = mysql_num_rows($departamentos);
 ?>
-
- <?php mysql_close($conexionconstructora);?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/plantillaadmin.dwt.php" codeOutsideHTMLIsLocked="false" -->
 <head>
@@ -62,34 +90,26 @@ $totalRows_departamentos = mysql_num_rows($departamentos);
     <p>&nbsp;</p>
     <!-- end .sidebar1 --></div>
   <div class="content"><!-- InstanceBeginEditable name="partederechaadmin" -->
-   <script>
-  function asegurar(){
-	  rc=confirm("¿Seguro desea eliminar?");
-	  return rc;
-	  }
-  
-  
-  </script>
-    <h1>Lista de departamentos</h1>
-    <p><a href="departamento_add.php"><img src="../iconos/agregar.png" width="16" height="16" />Añadir departamento</a><br />
-    </p>
-    <p>&nbsp; </p>
-    
-    <table width="100%" border="0" cellpadding="2" cellspacing="2">
-      <tr class="tablacabecera">
-        <td width="44%">Departamento</td>
-        <td width="25%">Correo</td>
-        <td width="19%">Acciones</td>
-      </tr>
-      <?php do { ?>
-        <tr>
-          <td><?php echo $row_departamentos['strnombre']; ?></td>
-          <td><?php echo $row_departamentos['strcorreo']; ?></td>
-          <td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="departamento_edit.php?recordID=<?php echo $row_departamentos['iddepartamento']; ?>"><img src="../iconos/editar32.png" width="32" height="32" /></a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="departamento_remove.php?recordID=<?php echo $row_departamentos['iddepartamento']; ?>"><img src="../iconos/eliminar.png" width="32" height="32" onclick="javascript:return asegurar();" /></a></td>
+    <h1>Editar Departamento</h1>
+    <form action="<?php echo $editFormAction; ?>" method="post" name="form1" id="form1">
+      <table align="center">
+        <tr valign="baseline">
+          <td nowrap="nowrap" align="right">Nombre:</td>
+          <td><input type="text" name="strnombre" value="<?php echo htmlentities($row_departamentos['strnombre'], ENT_COMPAT, 'iso-8859-1'); ?>" size="32" /></td>
         </tr>
-        <?php } while ($row_departamentos = mysql_fetch_assoc($departamentos)); ?>
+        <tr valign="baseline">
+          <td nowrap="nowrap" align="right">Correo:</td>
+          <td><input type="text" name="strcorreo" value="<?php echo htmlentities($row_departamentos['strcorreo'], ENT_COMPAT, 'iso-8859-1'); ?>" size="32" /></td>
+        </tr>
+        <tr valign="baseline">
+          <td nowrap="nowrap" align="right">&nbsp;</td>
+          <td><input type="submit" value="Actualizar registro" /></td>
+        </tr>
       </table>
-    
+      <input type="hidden" name="MM_update" value="form1" />
+      <input type="hidden" name="iddepartamento" value="<?php echo $row_departamentos['iddepartamento']; ?>" />
+    </form>
+    <p>&nbsp;</p>
   <!-- InstanceEndEditable -->
     
     <!-- end .content --></div>

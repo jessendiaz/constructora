@@ -1,3 +1,54 @@
+<?php require_once('Connections/conexionconstructora.php'); ?>
+<?php
+if (!function_exists("GetSQLValueString")) {
+function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
+{
+  if (PHP_VERSION < 6) {
+    $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
+  }
+
+  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+
+  switch ($theType) {
+    case "text":
+      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+      break;    
+    case "long":
+    case "int":
+      $theValue = ($theValue != "") ? intval($theValue) : "NULL";
+      break;
+    case "double":
+      $theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
+      break;
+    case "date":
+      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+      break;
+    case "defined":
+      $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
+      break;
+  }
+  return $theValue;
+}
+}
+
+$varDato_mail = "0";
+if (isset($_GET['$departamento'])) {
+  $varDato_mail = $_GET['$departamento'];
+}
+mysql_select_db($database_conexionconstructora, $conexionconstructora);
+$query_mail = sprintf("SELECT tbldepartamento.strcorreo FROM tbldepartamento WHERE tbldepartamento.strnombre=%s", GetSQLValueString($varDato_mail, "text"));
+$mail = mysql_query($query_mail, $conexionconstructora) or die(mysql_error());
+$row_mail = mysql_fetch_assoc($mail);
+$varDato_mail = "0";
+if (isset($_POST['menudepartamento'])) {
+  $varDato_mail = $_POST['menudepartamento'];
+}
+mysql_select_db($database_conexionconstructora, $conexionconstructora);
+$query_mail = sprintf("SELECT tbldepartamento.strcorreo FROM tbldepartamento WHERE tbldepartamento.strnombre=%s", GetSQLValueString($varDato_mail, "text"));
+$mail = mysql_query($query_mail, $conexionconstructora) or die(mysql_error());
+$row_mail = mysql_fetch_assoc($mail);
+$totalRows_mail = mysql_num_rows($mail);
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/plantillabase.dwt.php" codeOutsideHTMLIsLocked="false" -->
 <head>
@@ -52,7 +103,7 @@ $nombre = $_POST['nombre'];
 $correo = $_POST['correo'];
 $direccion = $_POST['direccion'];
 $telefono = $_POST['telefono'];
-//$menuarea = $_POST['menudepartamento'];
+$departamento = $_POST['menudepartamento'];
 $comentario = $_POST['mensaje'];
 
 
@@ -70,11 +121,11 @@ $mensaje .= "Dirección: " . $direccion . " \r\n";
 $mensaje .= "Telefono: " . $telefono . " \r\n";
 $mensaje .= "Mensaje: " . $comentario . " \r\n";
 $mensaje .= "Enviado el: " . date('d/m/Y', time());
-
-$para = "jessendiaz@gmail.com";
+$para = $row_mail['strcorreo'];
 $asunto = 'Contacto Constructora Alcantara';
 
 mail($para, $asunto, $mensaje, $header);
+
 ?>
 
     
@@ -92,3 +143,6 @@ mail($para, $asunto, $mensaje, $header);
   <?php include("includes/pie.php"); ?></div> 
 </body>
 <!-- InstanceEnd --></html>
+<?php
+mysql_free_result($mail);
+?>

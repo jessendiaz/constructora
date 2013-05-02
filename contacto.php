@@ -91,11 +91,11 @@ $totalRows_departamento = mysql_num_rows($departamento);
           <span class="textfieldInvalidFormatMsg">Formato no válido.</span></span></td>
         </tr>
       <tr>
-        <td align="right">Direccion:</td>
+        <td align="right">Direcci&oacute;n:</td>
         <td><input name="direccion" type="text" id="direccion" size="30" /></td>
         </tr>
       <tr>
-        <td align="right">Telefono</td>
+        <td align="right">Tel&eacute;fono</td>
         <td><input name="telefono" type="text" id="telefono" size="30" /></td>
         </tr>
       <tr>
@@ -116,22 +116,22 @@ do {
         </select></td>
         </tr>
       <tr>
-        <td align="right">Mensaje:</td>
+        <td align="right"><span class="obligatorio">*</span>Mensaje:</td>
         <td><span id="sprytextarea1">
-          <textarea name="mensaje" id="mensaje" cols="45" rows="5"></textarea>
+          <textarea name="mensaje" id="mensaje" required="required" cols="45" rows="5"></textarea>
           <span id="countsprytextarea1">&nbsp;</span><span class="textareaMaxCharsMsg">Se ha superado el número máximo de caracteres.</span></span></td>
         </tr>
       <tr>
-        <td></td>
-        <td ><input class="btnimageningresar" type="submit" name="enviar" value="" /> </td>
+        <td>&nbsp;</td>
+        <td ><input class="btnimageningresar" type="submit" name="enviar" value=""  /> </td>
         <td width="6"></td>
         </tr>
       </table>
   </form>
   <script type="text/javascript">
-var sprytextfield1 = new Spry.Widget.ValidationTextField("sprytextfield1");
-var sprytextfield2 = new Spry.Widget.ValidationTextField("sprytextfield2", "email", {isRequired:false});
-var sprytextarea1 = new Spry.Widget.ValidationTextarea("sprytextarea1", {isRequired:false, maxChars:500, counterId:"countsprytextarea1", counterType:"chars_remaining"});
+var sprytextfield1 = new Spry.Widget.ValidationTextField("sprytextfield1", "none", {validateOn:["change"]});
+var sprytextfield2 = new Spry.Widget.ValidationTextField("sprytextfield2", "email", {isRequired:false, validateOn:["change"]});
+var sprytextarea1 = new Spry.Widget.ValidationTextarea("sprytextarea1", {isRequired:false, maxChars:500, counterId:"countsprytextarea1", counterType:"chars_remaining", validateOn:["change"]});
   </script>
   <!-- InstanceEndEditable -->
     <!-- end .content -->
