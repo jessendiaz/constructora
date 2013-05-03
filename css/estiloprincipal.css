@@ -175,3 +175,7 @@ textarea{
 	text-align: left;
 	padding-left: 1px;
 }
+.imagen_cabecera{
+	float: right;
+	padding-top: 0px;	
+	}
