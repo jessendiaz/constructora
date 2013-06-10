@@ -50,6 +50,7 @@ $totalRows_departamento = mysql_num_rows($departamento);
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <!-- InstanceBeginEditable name="doctitle" -->
+<link href='http://fonts.googleapis.com/css?family=Arbutus+Slab' rel='stylesheet' type='text/css'>
 <?php $menuseleccionado=6;?>
 <title>Contacto | Constructora Alcantara</title>
 <!-- InstanceEndEditable -->
@@ -73,8 +74,9 @@ $totalRows_departamento = mysql_num_rows($departamento);
 <?php include("includes/menu.php"); ?>
 
 <div class="container">
-  <div class="content"><!-- InstanceBeginEditable name="cuerpo" -->
-    <h1>Contacto</h1>
+  <div class="content"><!-- InstanceBeginEditable name="cuerpo" --><br />
+
+    <h1><img src="images/iconespiral.png" width="22" height="22" /> Contacto</h1>
     <p>Tenga e</p>
   <form action="enviar.php" method="post" id="form1" name="form1">
     <table width="579" border="0">

@@ -53,6 +53,7 @@ $totalRows_mail = mysql_num_rows($mail);
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/plantillabase.dwt.php" codeOutsideHTMLIsLocked="false" -->
 <head>
 <link href="images/iconespiral.ico" type="image/x-icon" rel="shortcut icon" />
+<link href='http://fonts.googleapis.com/css?family=Arbutus+Slab' rel='stylesheet' type='text/css'>
 
 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />

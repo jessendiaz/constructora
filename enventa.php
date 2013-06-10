@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/plantillabase.dwt.php" codeOutsideHTMLIsLocked="false" -->
 <head>
 <link href="images/iconespiral.ico" type="image/x-icon" rel="shortcut icon" />
+<link href='http://fonts.googleapis.com/css?family=Arbutus+Slab' rel='stylesheet' type='text/css'>
 
 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
@@ -29,9 +30,13 @@
 <?php include("includes/menu.php"); ?>
 
 <div class="container">
-  <div class="content"><!-- InstanceBeginEditable name="cuerpo" -->
-    <h1>Proyectos en Venta</h1>
-    <p>Tenga e</p>
+  <div class="content"><!-- InstanceBeginEditable name="cuerpo" --><br />
+
+    <h1><img src="images/iconespiral.png" width="22" height="22" /> Proyectos en Venta</h1>
+    <p>1-	Condominio Puerta Norte: Este condominio cuenta con viviendas de 105 m2 construidos, Living y comedor en diferentes niveles, baño de visitas, una amplia cocina equipada, y tres dormitorios en segundo piso, además cuenta con acceso controlado, estacionamientos de visitas y amplios espacios para el desarrollo de la vida en familia.</p>
+<p>Cada casa cuenta con aéreas verdes terminadas y riego automático, estacionamiento propio, sistema de citofonía  y portero automático.</p>
+<p>Estas casas además tienen ventanas de termopanel y están revestidas interiormente en poligyp, sistema de aislación termo-acústica, que produce un ahorro en calefacción y aumento en el confort de la vivienda.</p>
+
   <!-- InstanceEndEditable -->
     <!-- end .content -->
   </div>

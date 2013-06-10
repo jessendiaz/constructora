@@ -2,10 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/plantillabase.dwt.php" codeOutsideHTMLIsLocked="false" -->
 <head>
 <link href="images/iconespiral.ico" type="image/x-icon" rel="shortcut icon" />
+<link href='http://fonts.googleapis.com/css?family=Arbutus+Slab' rel='stylesheet' type='text/css'>
 
 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <!-- InstanceBeginEditable name="doctitle" -->
+
 <?php $menuseleccionado=1;?>
 <title>Constructora Alcantara</title>
 <!-- InstanceEndEditable -->
@@ -49,12 +51,13 @@ a:active {
 <?php include("includes/slider.php"); ?>  
  
     
-    <h1>Inicio</h1>
+    <h1><img src="images/iconespiral.png" width="22" height="22" /> Inicio</h1>
     <a class="descargas" href="documentos/CURRICULUM.doc">documento a descargar</a>
-    <p>Al slider solo se le pueden meter 4 imagenes, se le puede colocar una breve descripcion a cada imagen, ademas al presionar en alguna esta puede llevar a alguna otra pagina</p>
-    <p>, a la cabecera le falta un eslogan y alguna otra peque&ntilde;a imagen si se desea, falta todo el contenido del cuerpo de esta pagina ademas de mejorar el menu del pie de pagina y el pie de pagina.</p>
- 
-
+    <p>Duis aute irure dolor quis nostrud exercitation in reprehenderit in voluptate. Sed do eiusmod tempor incididunt consectetur adipisicing elit, sunt in culpa. Ut enim ad minim veniam, velit esse cillum dolore excepteur sint occaecat. Eu fugiat nulla pariatur. Sed do eiusmod tempor incididunt lorem ipsum dolor sit amet, ut labore et dolore magna aliqua.</p>
+    <p>Quis nostrud exercitation excepteur sint occaecat consectetur adipisicing elit. Ut enim ad minim veniam. Ut enim ad minim veniam, lorem ipsum dolor sit amet, eu fugiat nulla pariatur. Ut aliquip ex ea commodo consequat.</p>
+    <p>Sed do eiusmod tempor incididunt in reprehenderit in voluptate excepteur sint occaecat. Consectetur adipisicing elit, quis nostrud exercitation qui officia deserunt. Velit esse cillum dolore in reprehenderit in voluptate sunt in culpa. Ut labore et dolore magna aliqua. Ut enim ad minim veniam, eu fugiat nulla pariatur.</p>
+    <p>Lorem ipsum dolor sit amet. Eu fugiat nulla pariatur. Ut enim ad minim veniam, consectetur adipisicing elit, velit esse cillum dolore. Qui officia deserunt duis aute irure dolor lorem ipsum dolor sit amet. Excepteur sint occaecat in reprehenderit in voluptate ut labore et dolore magna aliqua.</p>
+    <p>Sunt in culpa qui officia deserunt ut aliquip ex ea commodo consequat. Ut enim ad minim veniam, ullamco laboris nisi duis aute irure dolor. Cupidatat non proident. Duis aute irure dolor in reprehenderit in voluptate lorem ipsum dolor sit amet. Sed do eiusmod tempor incididunt ut enim ad minim veniam, eu fugiat nulla pariatur.</p>
   <!-- InstanceEndEditable -->
     <!-- end .content -->
   </div>
