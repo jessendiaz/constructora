@@ -1,5 +1,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/plantillabase.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<script src="SpryAssets/SpryValidationTextField.js" type="text/javascript"></script>
+<link href="SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css" />
+<link href="SpryAssets/SpryValidationTextarea.css" rel="stylesheet" type="text/css" />
+<script src="SpryAssets/SpryValidationTextarea.js" type="text/javascript"></script>
+<!-- InstanceBegin template="/Templates/plantillabase.dwt.php" codeOutsideHTMLIsLocked="false" -->
 <head>
 <link href="images/iconespiral.ico" type="image/x-icon" rel="shortcut icon" />
 <link href='http://fonts.googleapis.com/css?family=Arbutus+Slab' rel='stylesheet' type='text/css'>
@@ -33,11 +38,47 @@
   <div class="content"><!-- InstanceBeginEditable name="cuerpo" --><br />
 
     <h1><img src="images/iconespiral.png" width="22" height="22" /> Servicio al cliente</h1>
-    <p>Estimado Cliente, Constructora Alcántara Ltda. Pone a su disposición todos sus esfuerzos para dar solución a su problema, para orientarlo en uso y para dar los mejores consejos de la correcta mantención de su vivienda</p>.
-<p>Contáctese con nosotros y un profesional del área lo visitara.</p>
+    <p>Estimado Cliente, Constructora Alcántara Ltda. Pone a su disposición todos sus esfuerzos para dar solución a su problema, para orientarlo en uso y para dar los mejores consejos de la correcta mantención de su vivienda</p>
+    <p>Contáctese con nosotros y un profesional del área lo visitara.</p>
+    
+    <form action="enviar2.php" method="post" id="form1" name="form1">
+      <table width="579" border="0">
+        <tr>
+          <td width="255" align="right"><span class="obligatorio">*</span>Nombre Completo:</td>
+          <td width="304"><input name="nombre" type="text" id="nombre" required="required" size="30" /></td>
+        </tr>
+        <tr>
+          <td align="right" valign="top"><span class="obligatorio">*</span>Correo:</td>
+          <td><span id="sprytextfield1">
+          <input name="correo" type="text" id="correo" required="required"size="30" />
+          <span class="textfieldRequiredMsg">Se necesita un valor.</span><span class="textfieldInvalidFormatMsg">Formato no válido.</span></span></td>
+        </tr>
+        <tr>
+          <td align="right"><span class="obligatorio">*</span>Direcci&oacute;n:</td>
+          <td><input name="direccion" type="text" id="direccion" required="required" size="30" /></td>
+        </tr>
+        
+        
+        <tr>
+          <td align="right"><span class="obligatorio">*</span>Problema:</td>
+          <td><span id="sprytextarea2">
+          <textarea name="problema" id="problema" required="required" cols="45" rows="5"></textarea>
+          <span id="countsprytextarea2">&nbsp;</span><span class="textareaRequiredMsg">Se necesita un valor.</span><span class="textareaMaxCharsMsg">Se ha superado el número máximo de caracteres.</span></span></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td ><input class="btnimageningresar" type="submit" name="enviar" value=""  /> </td>
+          <td width="6"></td>
+        </tr>
+      </table>
+    </form>
 
-    <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.cl/maps?f=q&amp;source=s_q&amp;hl=es-419&amp;geocode=&amp;q=talca+chile&amp;aq=&amp;sll=-36.847148,-72.973426&amp;sspn=0.149184,0.338173&amp;t=m&amp;ie=UTF8&amp;hq=&amp;hnear=Talca,+Maule&amp;ll=-35.430673,-71.657295&amp;spn=0.024478,0.036564&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe><iframe width="420" height="315" src="http://www.youtube.com/embed/opeWhzk_MRQ" frameborder="0" allowfullscreen></iframe>
-    <br /><small><a href="https://maps.google.cl/maps?f=q&amp;source=embed&amp;hl=es-419&amp;geocode=&amp;q=talca+chile&amp;aq=&amp;sll=-36.847148,-72.973426&amp;sspn=0.149184,0.338173&amp;t=m&amp;ie=UTF8&amp;hq=&amp;hnear=Talca,+Maule&amp;ll=-35.430673,-71.657295&amp;spn=0.024478,0.036564&amp;z=14&amp;iwloc=A" style="color:#0000FF;text-align:left">Ver mapa más grande</a></small>
+ 
+    
+    <script type="text/javascript">
+var sprytextfield1 = new Spry.Widget.ValidationTextField("sprytextfield1", "email");
+var sprytextarea2 = new Spry.Widget.ValidationTextarea("sprytextarea2", {maxChars:500, counterId:"countsprytextarea2", counterType:"chars_remaining"});
+    </script>
   <!-- InstanceEndEditable -->
     <!-- end .content -->
   </div>

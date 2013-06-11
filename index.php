@@ -49,15 +49,8 @@ a:active {
 <div class="container">
   <div class="content"><!-- InstanceBeginEditable name="cuerpo" -->
 <?php include("includes/slider.php"); ?>  
- 
+
     
-    <h1><img src="images/iconespiral.png" width="22" height="22" /> Inicio</h1>
-    <a class="descargas" href="documentos/CURRICULUM.doc">documento a descargar</a>
-    <p>Duis aute irure dolor quis nostrud exercitation in reprehenderit in voluptate. Sed do eiusmod tempor incididunt consectetur adipisicing elit, sunt in culpa. Ut enim ad minim veniam, velit esse cillum dolore excepteur sint occaecat. Eu fugiat nulla pariatur. Sed do eiusmod tempor incididunt lorem ipsum dolor sit amet, ut labore et dolore magna aliqua.</p>
-    <p>Quis nostrud exercitation excepteur sint occaecat consectetur adipisicing elit. Ut enim ad minim veniam. Ut enim ad minim veniam, lorem ipsum dolor sit amet, eu fugiat nulla pariatur. Ut aliquip ex ea commodo consequat.</p>
-    <p>Sed do eiusmod tempor incididunt in reprehenderit in voluptate excepteur sint occaecat. Consectetur adipisicing elit, quis nostrud exercitation qui officia deserunt. Velit esse cillum dolore in reprehenderit in voluptate sunt in culpa. Ut labore et dolore magna aliqua. Ut enim ad minim veniam, eu fugiat nulla pariatur.</p>
-    <p>Lorem ipsum dolor sit amet. Eu fugiat nulla pariatur. Ut enim ad minim veniam, consectetur adipisicing elit, velit esse cillum dolore. Qui officia deserunt duis aute irure dolor lorem ipsum dolor sit amet. Excepteur sint occaecat in reprehenderit in voluptate ut labore et dolore magna aliqua.</p>
-    <p>Sunt in culpa qui officia deserunt ut aliquip ex ea commodo consequat. Ut enim ad minim veniam, ullamco laboris nisi duis aute irure dolor. Cupidatat non proident. Duis aute irure dolor in reprehenderit in voluptate lorem ipsum dolor sit amet. Sed do eiusmod tempor incididunt ut enim ad minim veniam, eu fugiat nulla pariatur.</p>
   <!-- InstanceEndEditable -->
     <!-- end .content -->
   </div>
