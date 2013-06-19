@@ -1,3 +1,42 @@
+<?php require_once('Connections/conexionconstructora.php'); ?>
+<?php
+if (!function_exists("GetSQLValueString")) {
+function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
+{
+  if (PHP_VERSION < 6) {
+    $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
+  }
+
+  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+
+  switch ($theType) {
+    case "text":
+      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+      break;    
+    case "long":
+    case "int":
+      $theValue = ($theValue != "") ? intval($theValue) : "NULL";
+      break;
+    case "double":
+      $theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
+      break;
+    case "date":
+      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+      break;
+    case "defined":
+      $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
+      break;
+  }
+  return $theValue;
+}
+}
+
+mysql_select_db($database_conexionconstructora, $conexionconstructora);
+$query_datosenventa = "SELECT * FROM venta";
+$datosenventa = mysql_query($query_datosenventa, $conexionconstructora) or die(mysql_error());
+$row_datosenventa = mysql_fetch_assoc($datosenventa);
+$totalRows_datosenventa = mysql_num_rows($datosenventa);
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/plantillabase.dwt.php" codeOutsideHTMLIsLocked="false" -->
 <head>
@@ -33,6 +72,9 @@
   <div class="content"><!-- InstanceBeginEditable name="cuerpo" --><br />
 
     <h1><img src="images/iconespiral.png" width="22" height="22" /> Proyectos en Venta</h1>
+    <?php do { ?>
+      <p><img src="documentos/img_enventa/<?php echo $row_datosenventa['strImagen']; ?>" width="300" height="300" />
+        <?php } while ($row_datosenventa = mysql_fetch_assoc($datosenventa)); ?>
     <p>1-	Condominio Puerta Norte: Este condominio cuenta con viviendas de 105 m2 construidos, Living y comedor en diferentes niveles, baño de visitas, una amplia cocina equipada, y tres dormitorios en segundo piso, además cuenta con acceso controlado, estacionamientos de visitas y amplios espacios para el desarrollo de la vida en familia.</p>
 <p>Cada casa cuenta con aéreas verdes terminadas y riego automático, estacionamiento propio, sistema de citofonía  y portero automático.</p>
 <p>Estas casas además tienen ventanas de termopanel y están revestidas interiormente en poligyp, sistema de aislación termo-acústica, que produce un ahorro en calefacción y aumento en el confort de la vivienda.</p>
@@ -50,3 +92,6 @@
   <?php include("includes/pie.php"); ?></div> 
 </body>
 <!-- InstanceEnd --></html>
+<?php
+mysql_free_result($datosenventa);
+?>

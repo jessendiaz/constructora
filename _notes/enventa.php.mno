@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_datosenventa" value="name:id_venta;datatype:int,name:strImagen;datatype:string,name:strLink;datatype:string,name:intestado;datatype:int" />
+</info>

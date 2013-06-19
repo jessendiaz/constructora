@@ -58,7 +58,7 @@ $totalRows_mail = mysql_num_rows($mail);
 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <!-- InstanceBeginEditable name="doctitle" -->
-<?php $menuseleccionado=6;?>
+<?php $menuseleccionado=5;?>
 <title>Constructora Alcantara</title>
 <!-- InstanceEndEditable -->
 <!-- InstanceBeginEditable name="head" -->
@@ -98,9 +98,9 @@ a:active {
 
 <div class="container">
   <div class="content"><!-- InstanceBeginEditable name="cuerpo" -->
+<br />
 
- 
-    <h1>Enviado</h1>
+    <h1><img src="images/iconespiral.png" width="22" height="22" /> Enviado</h1>
     Su mensaje fue enviado al area correspondiente. Gracias
     <?php
 $nombre = $_POST['nombre'];
@@ -114,7 +114,7 @@ $comentario = $_POST['problema'];
 $header = 'From: ' . $correo . " \r\n";
 $header .= "X-Mailer: PHP/" . phpversion() . " \r\n";
 $header .= "Mime-Version: 1.0 \r\n";
-$header .= "Content-Type: text/plain";
+$header .= "Content-Type: text/plain; charset=iso-8859-1";
 
 $mensaje = "Este mensaje fue enviado por " . $nombre ."\r\n";
 $mensaje .= "Nombre: " . $nombre . " \r\n"; 
@@ -122,7 +122,7 @@ $mensaje .= "Correo es: " . $correo . " \r\n";
 $mensaje .= "Dirección: " . $direccion . " \r\n";
 $mensaje .= "Problema: " . $comentario . " \r\n";
 $mensaje .= "Enviado el: " . date('d/m/Y', time());
-$para = $row_mail['jessendiaz@gmail.com'. ','.' jessen_1151@hotmail.com'];
+$para = 'jessendiaz@gmail.com, jessen_1151@hotmail.com';
 $asunto = 'Servicio Al cliente|Constructora';
 
 mail($para, $asunto, $mensaje, $header);

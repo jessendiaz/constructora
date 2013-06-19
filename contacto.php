@@ -77,7 +77,7 @@ $totalRows_departamento = mysql_num_rows($departamento);
   <div class="content"><!-- InstanceBeginEditable name="cuerpo" --><br />
 
     <h1><img src="images/iconespiral.png" width="22" height="22" /> Contacto</h1>
-    <p>Tenga e</p>
+    
   <form action="enviar.php" method="post" id="form1" name="form1">
     <table width="579" border="0">
       <tr>
@@ -125,7 +125,8 @@ do {
         </tr>
       <tr>
         <td>&nbsp;</td>
-        <td ><input class="btnimageningresar" type="submit" name="enviar" value=""  /> </td>
+        <td ><input class="btnimageningresar" type="submit" name="enviar" value=""  />
+        <span class="obligatorio">* Campos Obligatorios</span></td>
         <td width="6"></td>
         </tr>
       </table>

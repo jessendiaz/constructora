@@ -99,8 +99,9 @@ a:active {
 <div class="container">
   <div class="content"><!-- InstanceBeginEditable name="cuerpo" -->
 
- 
-    <h1>Enviado</h1>
+ <br />
+
+    <h1><img src="images/iconespiral.png" width="22" height="22" /> Enviado</h1>
     Su mensaje fue enviado al area correspondiente. Gracias
     <?php
 $nombre = $_POST['nombre'];
@@ -116,7 +117,7 @@ $comentario = $_POST['mensaje'];
 $header = 'From: ' . $correo . " \r\n";
 $header .= "X-Mailer: PHP/" . phpversion() . " \r\n";
 $header .= "Mime-Version: 1.0 \r\n";
-$header .= "Content-Type: text/plain";
+$header .= "Content-Type: text/plain; charset=iso-8859-1";
 
 $mensaje = "Este mensaje fue enviado por " . $nombre ."\r\n";
 $mensaje .= "Nombre: " . $nombre . " \r\n"; 
@@ -126,9 +127,9 @@ $mensaje .= "Telefono: " . $telefono . " \r\n";
 $mensaje .= "Mensaje: " . $comentario . " \r\n";
 $mensaje .= "Enviado el: " . date('d/m/Y', time());
 $para = $row_mail['strcorreo'];
-$asunto = 'Contacto Constructora Alcantara';
+$asunto = 'Contacto|Constructora';
 
-mail($para, $asunto, $mensaje, $header);
+mail($para, $asunto,$mensaje, $header);
 
 ?>
 

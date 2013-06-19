@@ -67,7 +67,7 @@
         </tr>
         <tr>
           <td>&nbsp;</td>
-          <td ><input class="btnimageningresar" type="submit" name="enviar" value=""  /> </td>
+          <td ><input class="btnimageningresar" type="submit" name="enviar" value=""  /> <span class="obligatorio">* Campos Obligatorios</span></td>
           <td width="6"></td>
         </tr>
       </table>
@@ -76,7 +76,7 @@
  
     
     <script type="text/javascript">
-var sprytextfield1 = new Spry.Widget.ValidationTextField("sprytextfield1", "email");
+var sprytextfield1 = new Spry.Widget.ValidationTextField("sprytextfield1", "email", {validateOn:["change"]});
 var sprytextarea2 = new Spry.Widget.ValidationTextarea("sprytextarea2", {maxChars:500, counterId:"countsprytextarea2", counterType:"chars_remaining"});
     </script>
   <!-- InstanceEndEditable -->
