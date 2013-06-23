@@ -32,10 +32,10 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 }
 
 mysql_select_db($database_conexionconstructora, $conexionconstructora);
-$query_datosenventa = "SELECT * FROM venta";
-$datosenventa = mysql_query($query_datosenventa, $conexionconstructora) or die(mysql_error());
-$row_datosenventa = mysql_fetch_assoc($datosenventa);
-$totalRows_datosenventa = mysql_num_rows($datosenventa);
+$query_Recordset1 = "SELECT * FROM venta";
+$Recordset1 = mysql_query($query_Recordset1, $conexionconstructora) or die(mysql_error());
+$row_Recordset1 = mysql_fetch_assoc($Recordset1);
+$totalRows_Recordset1 = mysql_num_rows($Recordset1);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/plantillabase.dwt.php" codeOutsideHTMLIsLocked="false" -->
@@ -71,14 +71,19 @@ $totalRows_datosenventa = mysql_num_rows($datosenventa);
 <div class="container">
   <div class="content"><!-- InstanceBeginEditable name="cuerpo" --><br />
 
-    <h1><img src="images/iconespiral.png" width="22" height="22" /> Proyectos en Venta</h1>
-    <div class="listaproyectos">
-    <?php do { ?>
-      <div class="proyecto"><a href="<?php echo $row_datosenventa['strLink']; ?>"><img src="documentos/img_enventa/<?php echo $row_datosenventa['strImagen']; ?>" /></a></div>
-        <?php } while ($row_datosenventa = mysql_fetch_assoc($datosenventa)); ?>
-        </div>
-   
+    <h1><img src="images/iconespiral.png" width="22" height="22" /> Condominio Puerta Norte</h1>
+    <div>
+      Este condominio cuenta con viviendas de 105 m2 construidos, Living y comedor en diferentes niveles, baño de visitas, una amplia cocina equipada, y tres dormitorios en segundo piso, además cuenta con acceso controlado, estacionamientos de visitas y amplios espacios para el desarrollo de la vida en familia.
+      
+Cada casa cuenta con aéreas verdes terminadas y riego automático, estacionamiento propio, sistema de citofonía  y portero automático.
+Estas casas además tienen ventanas de termopanel y están revestidas interiormente en poligyp, sistema de aislación termo-acústica, que produce un ahorro en calefacción y aumento en el confort de la vivienda.
+</div><br />
 
+
+<?php do { ?>
+  <a class="thumbnail" href="#thumb"><img src="documentos/img_enventa/<?php echo $row_Recordset1['strImagen']; ?>" width="200px" height="200px" border="0" /><span><img src="documentos/img_enventa/<?php echo $row_Recordset1['strImagen']; ?>" /><br />
+    Pie de foto</span></a>
+  <?php } while ($row_Recordset1 = mysql_fetch_assoc($Recordset1)); ?>
   <!-- InstanceEndEditable -->
     <!-- end .content -->
   </div>
@@ -93,5 +98,5 @@ $totalRows_datosenventa = mysql_num_rows($datosenventa);
 </body>
 <!-- InstanceEnd --></html>
 <?php
-mysql_free_result($datosenventa);
+mysql_free_result($Recordset1);
 ?>
