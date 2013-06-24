@@ -32,7 +32,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 }
 
 mysql_select_db($database_conexionconstructora, $conexionconstructora);
-$query_Recordset1 = "SELECT * FROM venta";
+$query_Recordset1 = "SELECT * FROM tblpuertanorte";
 $Recordset1 = mysql_query($query_Recordset1, $conexionconstructora) or die(mysql_error());
 $row_Recordset1 = mysql_fetch_assoc($Recordset1);
 $totalRows_Recordset1 = mysql_num_rows($Recordset1);
@@ -80,10 +80,12 @@ Estas casas además tienen ventanas de termopanel y están revestidas interiorment
 </div><br />
 
 
-<?php do { ?>
-  <a class="thumbnail" href="#thumb"><img src="documentos/img_enventa/<?php echo $row_Recordset1['strImagen']; ?>" width="200px" height="200px" border="0" /><span><img src="documentos/img_enventa/<?php echo $row_Recordset1['strImagen']; ?>" /><br />
-    Pie de foto</span></a>
+
+  <?php do { ?>
+  <a class="thumbnail" href="#thumb"><img src="documentos/img_puertanorte/<?php echo $row_Recordset1['strimagen']; ?>" width="200px" height="200px" border="0" /><span><img src="documentos/img_puertanorte/<?php echo $row_Recordset1['strimagen']; ?>" /><br />
+    <?php echo $row_Recordset1['strdescripcion']; ?></span></a>
   <?php } while ($row_Recordset1 = mysql_fetch_assoc($Recordset1)); ?>
+
   <!-- InstanceEndEditable -->
     <!-- end .content -->
   </div>
