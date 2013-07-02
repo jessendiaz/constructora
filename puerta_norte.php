@@ -80,11 +80,12 @@ Estas casas además tienen ventanas de termopanel y están revestidas interiorment
 </div><br />
 
 
-
+<div class="img_content">
   <?php do { ?>
   <a class="thumbnail" href="#thumb"><img src="documentos/img_puertanorte/<?php echo $row_Recordset1['strimagen']; ?>" width="200px" height="200px" border="0" /><span><img src="documentos/img_puertanorte/<?php echo $row_Recordset1['strimagen']; ?>" /><br />
     <?php echo $row_Recordset1['strdescripcion']; ?></span></a>
   <?php } while ($row_Recordset1 = mysql_fetch_assoc($Recordset1)); ?>
+</div>
 
   <!-- InstanceEndEditable -->
     <!-- end .content -->

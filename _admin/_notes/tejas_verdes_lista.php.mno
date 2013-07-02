@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_datotejasverdes" value="name:id_tejasverdes;datatype:int,name:strimagen;datatype:string,name:strdescripcion;datatype:string,name:intestado;datatype:int" />
+</info>

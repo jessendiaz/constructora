@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_enventa" value="name:id_venta;datatype:int,name:strImagen;datatype:string,name:strLink;datatype:string,name:intestado;datatype:int" />
+	<infoitem key="UD_enconstruccion" value="name:id_construccion;datatype:int,name:strimagen;datatype:string,name:strlink;datatype:string,name:intestado;datatype:int" />
+</info>

@@ -81,13 +81,13 @@ $totalRows_datospuertanorte = mysql_num_rows($datospuertanorte);
       </tr>
       <?php do { ?>
       <tr>
-    <td><p><img src="../documentos/img_enventa/<?php echo $row_datospuertanorte['strimagen']; ?>" width="300" height="119" /></p>
+    <td><p><img src="../documentos/img_puertanorte/<?php echo $row_datospuertanorte['strimagen']; ?>" width="300" height="119" /></p>
       <p></p></td>
     <td><?php echo $row_datospuertanorte['strdescripcion']; ?></td>
     <td><?php 
 	if( $row_datospuertanorte['intestado']==1)echo "ACTIVO";
 	else echo"INACTIVO";?></td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="puertanorte_edit.php?recordID=<?php echo $row_datospuertanorte['id_puertanorte']; ?>"><img src="../iconos/editar32.png" width="32" height="32" /></a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="puertanorte_remove.php?recordID=<?php echo $row_datospuertanorte['id_puertanorte']; ?>"><img src="../iconos/eliminar.png" width="32" height="32" onclick="javascript:return asegurar();" /></a></td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="puerta_norte_edit.php?recordID=<?php echo $row_datospuertanorte['id_puertanorte']; ?>"><img src="../iconos/editar32.png" width="32" height="32" /></a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="puerta_norte_remove.php?recordID=<?php echo $row_datospuertanorte['id_puertanorte']; ?>"><img src="../iconos/eliminar.png" width="32" height="32" onclick="javascript:return asegurar();" /></a></td>
   </tr>
       <?php } while ($row_datospuertanorte = mysql_fetch_assoc($datospuertanorte)); ?>
     </table>

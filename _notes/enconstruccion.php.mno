@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_datoscont" value="name:id_construccion;datatype:int,name:strimagen;datatype:string,name:strlink;datatype:string,name:intestado;datatype:int" />
+</info>

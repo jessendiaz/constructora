@@ -1,5 +1,42 @@
 <?php require_once('../Connections/conexionconstructora.php'); ?>
+<?php
+if (!function_exists("GetSQLValueString")) {
+function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
+{
+  if (PHP_VERSION < 6) {
+    $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
+  }
 
+  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+
+  switch ($theType) {
+    case "text":
+      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+      break;    
+    case "long":
+    case "int":
+      $theValue = ($theValue != "") ? intval($theValue) : "NULL";
+      break;
+    case "double":
+      $theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
+      break;
+    case "date":
+      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+      break;
+    case "defined":
+      $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
+      break;
+  }
+  return $theValue;
+}
+}
+
+mysql_select_db($database_conexionconstructora, $conexionconstructora);
+$query_datodonagustin = "SELECT * FROM tbldonagustin";
+$datodonagustin = mysql_query($query_datodonagustin, $conexionconstructora) or die(mysql_error());
+$row_datodonagustin = mysql_fetch_assoc($datodonagustin);
+$totalRows_datodonagustin = mysql_num_rows($datodonagustin);
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/plantillaadmin.dwt.php" codeOutsideHTMLIsLocked="false" -->
 <head>
@@ -31,8 +68,8 @@
   
   
   </script>
-    <h1>Lista de Imagenes Puerta Norte</h1>
-    <p><a href="enventa_add.php"><img src="../iconos/agregar.png" width="16" height="16" />Añadir Imagen</a><br />
+    <h1>Lista de Imagenes Don Agustin</h1>
+    <p><a href="don_agustin_add.php"><img src="../iconos/agregar.png" width="16" height="16" />Añadir Imagen</a><br />
     </p>
     <p>&nbsp; </p>
     <table width="100%" border="0" cellpadding="2" cellspacing="2">
@@ -45,15 +82,15 @@
       
       <?php do { ?>
   <tr>
-    <td><p><img src="../documentos/img_enventa/<?php echo $row_enventa['strImagen']; ?>" width="300" height="119" /></p>
+    <td><p><img src="../documentos/img_donagustin/<?php echo $row_datodonagustin['strimagen']; ?>" width="300" height="119" /></p>
       <p></p></td>
-    <td><?php echo $row_enventa['strLink']; ?></td>
+    <td><?php echo $row_datodonagustin['strdescripcion']; ?></td>
     <td><?php 
-	if( $row_enventa['intestado']==1)echo "ACTIVO";
+	if( $row_datodonagustin['intestado']==1)echo "ACTIVO";
 	else echo"INACTIVO";?></td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="enventa_edit.php?recordID=<?php echo $row_enventa['id_venta']; ?>"><img src="../iconos/editar32.png" width="32" height="32" /></a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="enventa_remove.php?recordID=<?php echo $row_enventa['id_venta']; ?>"><img src="../iconos/eliminar.png" width="32" height="32" onclick="javascript:return asegurar();" /></a></td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="don_agustin_edit.php?recordID=<?php echo $row_datodonagustin['id_donagustin']; ?>"><img src="../iconos/editar32.png" width="32" height="32" /></a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="don_agustin_remove.php?recordID=<?php echo $row_datodonagustin['id_donagustin']; ?>"><img src="../iconos/eliminar.png" width="32" height="32" onclick="javascript:return asegurar();" /></a></td>
   </tr>
-  <?php } while ($row_enventa = mysql_fetch_assoc($enventa)); ?>
+  <?php } while ($row_datodonagustin = mysql_fetch_assoc($datodonagustin)); ?>
   
     </table>
   <!-- InstanceEndEditable -->
@@ -64,4 +101,6 @@
   <!-- end .container --></div>
 </body>
 <!-- InstanceEnd --></html>
-
+<?php
+mysql_free_result($datodonagustin);
+?>

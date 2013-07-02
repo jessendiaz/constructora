@@ -89,7 +89,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
     <form action="<?php echo $editFormAction; ?>" method="post" name="form1" id="form1">
       <table align="center">
         <tr valign="baseline">
-          <td width="76" align="right" nowrap="nowrap">Imagen(500x200):</td>
+          <td width="76" align="right" nowrap="nowrap">Imagen:</td>
           <td width="390"><input name="strimagen" type="text" id="strimagen" value="" size="32" /><input type="button" name="button" id="button" value="Examinar" onclick="javascript:subirimagen();"/></td>
         </tr>
         <tr valign="baseline">

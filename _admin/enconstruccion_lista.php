@@ -32,10 +32,10 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 }
 
 mysql_select_db($database_conexionconstructora, $conexionconstructora);
-$query_datotejasverdes = "SELECT * FROM tbltejasverdes";
-$datotejasverdes = mysql_query($query_datotejasverdes, $conexionconstructora) or die(mysql_error());
-$row_datotejasverdes = mysql_fetch_assoc($datotejasverdes);
-$totalRows_datotejasverdes = mysql_num_rows($datotejasverdes);
+$query_enconstruccion = "SELECT * FROM tblcostruccion";
+$enconstruccion = mysql_query($query_enconstruccion, $conexionconstructora) or die(mysql_error());
+$row_enconstruccion = mysql_fetch_assoc($enconstruccion);
+$totalRows_enconstruccion = mysql_num_rows($enconstruccion);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/plantillaadmin.dwt.php" codeOutsideHTMLIsLocked="false" -->
@@ -68,29 +68,29 @@ $totalRows_datotejasverdes = mysql_num_rows($datotejasverdes);
   
   
   </script>
-    <h1>Lista de Imagenes Tejas Verdes</h1>
-    <p><a href="tejas_verdes_add.php"><img src="../iconos/agregar.png" width="16" height="16" />Añadir Imagen</a><br />
+    <h1>Lista de Proyectos en Construcci&oacute;n</h1>
+    <p><a href="enconstruccion_add.php"><img src="../iconos/agregar.png" width="16" height="16" />Añadir Proyecto</a><br />
     </p>
     <p>&nbsp; </p>
     <table width="100%" border="0" cellpadding="2" cellspacing="2">
       <tr class="tablacabecera">
         <td width="44%">Imagen</td>
-        <td width="25%">Descripcion</td>
+        <td width="25%">Link</td>
         <td width="12%">Estado</td>
         <td width="19%">Acciones</td>
       </tr>
       
       <?php do { ?>
   <tr>
-    <td><p><img src="../documentos/img_tejasverdes/<?php echo $row_datotejasverdes['strimagen']; ?>" width="300" height="119" /></p>
+    <td><p><img src="../documentos/img_enconstruccion/<?php echo $row_enconstruccion['strimagen']; ?>" width="300" height="119" /></p>
       <p></p></td>
-    <td><?php echo $row_datotejasverdes['strdescripcion']; ?></td>
+    <td><?php echo $row_enconstruccion['strlink']; ?></td>
     <td><?php 
-	if( $row_datotejasverdes['intestado']==1)echo "ACTIVO";
+	if( $row_enconstruccion['intestado']==1)echo "ACTIVO";
 	else echo"INACTIVO";?></td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="tejas_verdes_edit.php?recordID=<?php echo $row_datotejasverdes['id_tejasverdes']; ?>"><img src="../iconos/editar32.png" width="32" height="32" /></a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="tejas_verdes_remove.php?recordID=<?php echo $row_datotejasverdes['id_tejasverdes']; ?>"><img src="../iconos/eliminar.png" width="32" height="32" onclick="javascript:return asegurar();" /></a></td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="enconstruccion_edit.php?recordID=<?php echo $row_enconstruccion['id_construccion']; ?>"><img src="../iconos/editar32.png" width="32" height="32" /></a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="enconstruccion_remove.php?recordID=<?php echo $row_enconstruccion['id_construccion']; ?>"><img src="../iconos/eliminar.png" width="32" height="32" onclick="javascript:return asegurar();" /></a></td>
   </tr>
-  <?php } while ($row_datotejasverdes = mysql_fetch_assoc($datotejasverdes)); ?>
+  <?php } while ($row_enconstruccion = mysql_fetch_assoc($enconstruccion)); ?>
   
     </table>
   <!-- InstanceEndEditable -->
@@ -102,5 +102,5 @@ $totalRows_datotejasverdes = mysql_num_rows($datotejasverdes);
 </body>
 <!-- InstanceEnd --></html>
 <?php
-mysql_free_result($datotejasverdes);
+mysql_free_result($enconstruccion);
 ?>

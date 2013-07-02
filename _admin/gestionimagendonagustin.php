@@ -8,16 +8,16 @@
 <body>
 <?php if ((isset($_POST["enviado"])) && ($_POST["enviado"] == "form1")) {
 $nombre_archivo=$_FILES['userfile']['name'];
-move_uploaded_file($_FILES['userfile']['tmp_name'],"../documentos/img_slider/".$nombre_archivo);
+move_uploaded_file($_FILES['userfile']['tmp_name'],"../documentos/img_donagustin/".$nombre_archivo);
 ?>
 <script>
-opener.document.form1.strImagen.value="<?php echo $nombre_archivo;?>";
+opener.document.form1.strimagen.value="<?php echo $nombre_archivo;?>";
 self.close();
 </script>
 <?php	
 	}
 	else{?>
-<form action="gestionimagen.php" method="post" enctype="multipart/form-data" id="form1">
+<form action="gestionimagendonagustin.php" method="post" enctype="multipart/form-data" id="form1">
   <p>
     <input name="userfile" type="file" />
     <input type="submit" name="button" id="button" value="Enviar" />

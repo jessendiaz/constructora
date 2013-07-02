@@ -32,10 +32,10 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 }
 
 mysql_select_db($database_conexionconstructora, $conexionconstructora);
-$query_datoscont = "SELECT * FROM tblcostruccion";
-$datoscont = mysql_query($query_datoscont, $conexionconstructora) or die(mysql_error());
-$row_datoscont = mysql_fetch_assoc($datoscont);
-$totalRows_datoscont = mysql_num_rows($datoscont);
+$query_Recordset1 = "SELECT * FROM tbltejasverdes";
+$Recordset1 = mysql_query($query_Recordset1, $conexionconstructora) or die(mysql_error());
+$row_Recordset1 = mysql_fetch_assoc($Recordset1);
+$totalRows_Recordset1 = mysql_num_rows($Recordset1);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/plantillabase.dwt.php" codeOutsideHTMLIsLocked="false" -->
@@ -71,12 +71,21 @@ $totalRows_datoscont = mysql_num_rows($datoscont);
 <div class="container">
   <div class="content"><!-- InstanceBeginEditable name="cuerpo" --><br />
 
-    <h1><img src="images/iconespiral.png" width="22" height="22" /> Proyectos en Construcción</h1>
-   <div class="listaproyectos">
-    <?php do { ?>
-      <div class="proyecto"><a href="<?php echo $row_datoscont['strlink']; ?>"><img src="documentos/img_enconstruccion/<?php echo $row_datoscont['strimagen']; ?>"width="300px" height="300px" /></a></div>
-        <?php } while ($row_datoscont = mysql_fetch_assoc($datoscont)); ?>
-    </div>
+    <h1><img src="images/iconespiral.png" width="22" height="22" /> Conjunto Residencial Tejas Verdes</h1>
+    <div>
+      Es un proyecto ubicado en el corazón de Las Rastras, sector exclusivo y de gran plusvalía. Con viviendas de 250 mts2 construidos  y emplazadas en terrenos de 560 mts2 aproximados.
+Estas viviendas cuentan con una arquitectura moderna, amplios espacios interiores y una distribución acogedora y confortable. La vivienda dispone de una amplia cocina, living y comedor independientes, 5 dormitorios , tres de ellos en suite, 5 baños y una amplia sala de estar, además cuenta con terrazas, balcones y una hermosa piscina que permiten disfrutar de la tranquilidad y naturaleza del sector.
+
+</div><br />
+
+
+
+<div class="img_content">
+  <?php do { ?>
+  <a class="thumbnail" href="#thumb"><img src="documentos/img_tejasverdes/<?php echo $row_Recordset1['strimagen']; ?>" width="200px" height="200px" border="0" /><span><img src="documentos/img_tejasverdes/<?php echo $row_Recordset1['strimagen']; ?>" /><br />
+    <?php echo $row_Recordset1['strdescripcion']; ?></span></a>
+  <?php } while ($row_Recordset1 = mysql_fetch_assoc($Recordset1)); ?>
+</div>
 
   <!-- InstanceEndEditable -->
     <!-- end .content -->
@@ -92,5 +101,5 @@ $totalRows_datoscont = mysql_num_rows($datoscont);
 </body>
 <!-- InstanceEnd --></html>
 <?php
-mysql_free_result($datoscont);
+mysql_free_result($Recordset1);
 ?>

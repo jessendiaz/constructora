@@ -54,7 +54,7 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
   header(sprintf("Location: %s", $updateGoTo));
 }
 
-$varDato_datoenventa = "-1";
+$varDato_datoenventa = "0";
 if (isset($_GET["recordID"])) {
   $varDato_datoenventa = $_GET["recordID"];
 }

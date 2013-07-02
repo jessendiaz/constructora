@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_datoImagen" value="name:idContador;datatype:int,name:strImagen;datatype:string,name:strDescripcion;datatype:string,name:intEstado;datatype:int" />
+	<infoitem key="UD_nombreImagen" value="name:strImagen;datatype:string" />
+	<infoitem key="UD_rutaImagen" value="name:strImagen;datatype:string" />
+</info>

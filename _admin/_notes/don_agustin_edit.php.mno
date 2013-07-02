@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_datoimagen" value="name:id_donagustin;datatype:int,name:strimagen;datatype:string,name:strdescripcion;datatype:string,name:intestado;datatype:int" />
+	<infoitem key="UD_datodonagustin" value="name:id_donagustin;datatype:int,name:strimagen;datatype:string,name:strdescripcion;datatype:string,name:intestado;datatype:int" />
+</info>

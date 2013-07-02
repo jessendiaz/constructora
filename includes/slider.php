@@ -53,7 +53,7 @@ $totalRows_datosSlider = mysql_num_rows($datosSlider);
  <div class="slider-wrapper theme-default">
             <div id="slider" class="nivoSlider"> 
               <?php do { ?>
-              <img src="documentos/img_slider/<?php echo $row_datosSlider['strImagen']; ?>" alt=""title="<?php echo $row_datosSlider['strDescripcion']; ?>" name="imagen_$contador<?php echo $contador; ?>" id="imagen_$contador" />
+              <img src="documentos/img_slider/<?php echo $row_datosSlider['strImagen']; ?>" width="990px" height="394px" alt=""title="<?php echo $row_datosSlider['strDescripcion']; ?>" name="imagen_$contador<?php echo $contador; ?>" id="imagen_$contador" />
                 <?php $contador++;} while ($row_datosSlider = mysql_fetch_assoc($datosSlider)); ?>
               
             </div>

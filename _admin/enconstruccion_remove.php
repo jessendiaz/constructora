@@ -31,12 +31,23 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 }
 }
 
-mysql_select_db($database_conexionconstructora, $conexionconstructora);
-$query_datotejasverdes = "SELECT * FROM tbltejasverdes";
-$datotejasverdes = mysql_query($query_datotejasverdes, $conexionconstructora) or die(mysql_error());
-$row_datotejasverdes = mysql_fetch_assoc($datotejasverdes);
-$totalRows_datotejasverdes = mysql_num_rows($datotejasverdes);
+if ((isset($_GET['recordID'])) && ($_GET['recordID'] != "")) {
+  $deleteSQL = sprintf("DELETE FROM tblcostruccion WHERE id_construccion=%s",
+                       GetSQLValueString($_GET['recordID'], "int"));
+
+  mysql_select_db($database_conexionconstructora, $conexionconstructora);
+  $Result1 = mysql_query($deleteSQL, $conexionconstructora) or die(mysql_error());
+
+  $deleteGoTo = "enconstruccion_lista.php";
+  if (isset($_SERVER['QUERY_STRING'])) {
+    $deleteGoTo .= (strpos($deleteGoTo, '?')) ? "&" : "?";
+    $deleteGoTo .= $_SERVER['QUERY_STRING'];
+  }
+  header(sprintf("Location: %s", $deleteGoTo));
+}
 ?>
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/plantillaadmin.dwt.php" codeOutsideHTMLIsLocked="false" -->
 <head>
@@ -60,39 +71,9 @@ $totalRows_datotejasverdes = mysql_num_rows($datotejasverdes);
     <p>&nbsp;</p>
     <!-- end .sidebar1 --></div>
   <div class="content"><!-- InstanceBeginEditable name="partederechaadmin" -->
-   <script>
-  function asegurar(){
-	  rc=confirm("¿Seguro desea eliminar?");
-	  return rc;
-	  }
-  
-  
-  </script>
-    <h1>Lista de Imagenes Tejas Verdes</h1>
-    <p><a href="tejas_verdes_add.php"><img src="../iconos/agregar.png" width="16" height="16" />Añadir Imagen</a><br />
-    </p>
-    <p>&nbsp; </p>
-    <table width="100%" border="0" cellpadding="2" cellspacing="2">
-      <tr class="tablacabecera">
-        <td width="44%">Imagen</td>
-        <td width="25%">Descripcion</td>
-        <td width="12%">Estado</td>
-        <td width="19%">Acciones</td>
-      </tr>
-      
-      <?php do { ?>
-  <tr>
-    <td><p><img src="../documentos/img_tejasverdes/<?php echo $row_datotejasverdes['strimagen']; ?>" width="300" height="119" /></p>
-      <p></p></td>
-    <td><?php echo $row_datotejasverdes['strdescripcion']; ?></td>
-    <td><?php 
-	if( $row_datotejasverdes['intestado']==1)echo "ACTIVO";
-	else echo"INACTIVO";?></td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="tejas_verdes_edit.php?recordID=<?php echo $row_datotejasverdes['id_tejasverdes']; ?>"><img src="../iconos/editar32.png" width="32" height="32" /></a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="tejas_verdes_remove.php?recordID=<?php echo $row_datotejasverdes['id_tejasverdes']; ?>"><img src="../iconos/eliminar.png" width="32" height="32" onclick="javascript:return asegurar();" /></a></td>
-  </tr>
-  <?php } while ($row_datotejasverdes = mysql_fetch_assoc($datotejasverdes)); ?>
-  
-    </table>
+    <h1>Eliminando Proyecto</h1>
+    
+    Procesando....
   <!-- InstanceEndEditable -->
     
     <!-- end .content --></div>
@@ -101,6 +82,3 @@ $totalRows_datotejasverdes = mysql_num_rows($datotejasverdes);
   <!-- end .container --></div>
 </body>
 <!-- InstanceEnd --></html>
-<?php
-mysql_free_result($datotejasverdes);
-?>

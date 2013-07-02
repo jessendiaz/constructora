@@ -36,22 +36,33 @@ if (isset($_SERVER['QUERY_STRING'])) {
   $editFormAction .= "?" . htmlentities($_SERVER['QUERY_STRING']);
 }
 
-if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
-  $insertSQL = sprintf("INSERT INTO venta (strImagen, strLink, intestado) VALUES (%s, %s, %s)",
-                       GetSQLValueString($_POST['strImagen'], "text"),
-                       GetSQLValueString($_POST['strLink'], "text"),
-                       GetSQLValueString($_POST['intestado'], "int"));
+if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
+  $updateSQL = sprintf("UPDATE tbltejasverdes SET strimagen=%s, strdescripcion=%s, intestado=%s WHERE id_tejasverdes=%s",
+                       GetSQLValueString($_POST['strimagen'], "text"),
+                       GetSQLValueString($_POST['strdescripcion'], "text"),
+                       GetSQLValueString($_POST['intestado'], "int"),
+                       GetSQLValueString($_POST['id_tejasverdes'], "int"));
 
   mysql_select_db($database_conexionconstructora, $conexionconstructora);
-  $Result1 = mysql_query($insertSQL, $conexionconstructora) or die(mysql_error());
+  $Result1 = mysql_query($updateSQL, $conexionconstructora) or die(mysql_error());
 
-  $insertGoTo = "enventa_lista.php";
+  $updateGoTo = "tejas_verdes_lista.php";
   if (isset($_SERVER['QUERY_STRING'])) {
-    $insertGoTo .= (strpos($insertGoTo, '?')) ? "&" : "?";
-    $insertGoTo .= $_SERVER['QUERY_STRING'];
+    $updateGoTo .= (strpos($updateGoTo, '?')) ? "&" : "?";
+    $updateGoTo .= $_SERVER['QUERY_STRING'];
   }
-  header(sprintf("Location: %s", $insertGoTo));
+  header(sprintf("Location: %s", $updateGoTo));
 }
+
+$varDato_datotejasverdes = "-1";
+if (isset($_GET["recordID"])) {
+  $varDato_datotejasverdes = $_GET["recordID"];
+}
+mysql_select_db($database_conexionconstructora, $conexionconstructora);
+$query_datotejasverdes = sprintf("SELECT * FROM tbltejasverdes WHERE tbltejasverdes.id_tejasverdes=%s", GetSQLValueString($varDato_datotejasverdes, "int"));
+$datotejasverdes = mysql_query($query_datotejasverdes, $conexionconstructora) or die(mysql_error());
+$row_datotejasverdes = mysql_fetch_assoc($datotejasverdes);
+$totalRows_datotejasverdes = mysql_num_rows($datotejasverdes);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/plantillaadmin.dwt.php" codeOutsideHTMLIsLocked="false" -->
@@ -61,7 +72,6 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
 <title>Administracion Constructora Alcantara</title>
 <!-- InstanceEndEditable -->
 <!-- InstanceBeginEditable name="head" -->
-
 <!-- InstanceEndEditable -->
 <link href="../css/estiloadmin.css" rel="stylesheet" type="text/css" />
 </head>
@@ -77,44 +87,42 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
     <p>&nbsp;</p>
     <!-- end .sidebar1 --></div>
   <div class="content"><!-- InstanceBeginEditable name="partederechaadmin" -->
-  <script>
+   <script>
   function subirimagen(){
 	  self.name='opener';
-	  remote=open('gestionimagenenventa.php','remote','width=400,height=150,location=no,scrollbars=yes,menubars=no,toolbars=no,resizable=yes,fullscreen=no,status=yes');
+	  remote=open('gestionimagentejasverdes.php','remote','width=400,height=150,location=no,scrollbars=yes,menubars=no,toolbars=no,resizable=yes,fullscreen=no,status=yes');
 	  remote.focus();
 	  }
   
   </script>
-    <h1>Añadir Proyecto en Venta</h1>
+    <h1>Editar Imagen Tejas Verdes</h1>
     <p>&nbsp;</p>
     <form action="<?php echo $editFormAction; ?>" method="post" name="form1" id="form1">
       <table align="center">
         <tr valign="baseline">
-          <td width="53" align="right" nowrap="nowrap">Imagen:</td>
-          <td width="332"><input type="text" name="strImagen" value="" size="32" />
-          <input type="button" name="button" id="button" value="Examinar" onclick="javascript:subirimagen();"/></td><td width="0"></td>
+          <td width="93" align="right" nowrap="nowrap">Strimagen:</td>
+          <td width="328"><input type="text" name="strimagen" value="<?php echo htmlentities($row_datotejasverdes['strimagen'], ENT_COMPAT, 'iso-8859-1'); ?>" size="32" /><input type="button" name="button" id="button" value="Examinar" onclick="javascript:subirimagen();"/></td>
         </tr>
         <tr valign="baseline">
-          <td nowrap="nowrap" align="right">Link:</td>
-          <td><input type="text" name="strLink" value="" size="32" /></td>
+          <td nowrap="nowrap" align="right">Strdescripcion:</td>
+          <td><input type="text" name="strdescripcion" value="<?php echo htmlentities($row_datotejasverdes['strdescripcion'], ENT_COMPAT, 'iso-8859-1'); ?>" size="32" /></td>
         </tr>
         <tr valign="baseline">
-          <td nowrap="nowrap" align="right">Estado:</td>
-          <td colspan="2"><select name="intestado" id="intestado">
-            <option value="1">Activado</option>
-            <option value="0">Desactivado</option>
+          <td nowrap="nowrap" align="right">Intestado:</td>
+          <td><select name="intestado">
+            <option value="1" <?php if (!(strcmp(1, htmlentities($row_datotejasverdes['intestado'], ENT_COMPAT, 'iso-8859-1')))) {echo "SELECTED";} ?>>Activado</option>
+            <option value="0" <?php if (!(strcmp(0, htmlentities($row_datotejasverdes['intestado'], ENT_COMPAT, 'iso-8859-1')))) {echo "SELECTED";} ?>>Desactivado</option>
           </select></td>
         </tr>
         <tr valign="baseline">
           <td nowrap="nowrap" align="right">&nbsp;</td>
-          <td><input type="submit" value="Insertar Proyecto" /></td>
+          <td><input type="submit" value="Actualizar registro" /></td>
         </tr>
       </table>
-      <input type="hidden" name="MM_insert" value="form1" />
+      <input type="hidden" name="MM_update" value="form1" />
+      <input type="hidden" name="id_tejasverdes" value="<?php echo $row_datotejasverdes['id_tejasverdes']; ?>" />
     </form>
     <p>&nbsp;</p>
-<p>&nbsp;</p>
-    
   <!-- InstanceEndEditable -->
     
     <!-- end .content --></div>
@@ -123,3 +131,6 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
   <!-- end .container --></div>
 </body>
 <!-- InstanceEnd --></html>
+<?php
+mysql_free_result($datotejasverdes);
+?>
