@@ -96,16 +96,16 @@ $totalRows_datoenconstruccion = mysql_num_rows($datoenconstruccion);
     <form action="<?php echo $editFormAction; ?>" method="post" name="form1" id="form1">
       <table width="441" align="center">
         <tr valign="baseline">
-          <td width="69" align="right" nowrap="nowrap">Strimagen:</td>
+          <td width="69" align="right" nowrap="nowrap">Imagen:</td>
           <td width="692"><input type="text" name="strimagen" value="" size="32" />
           <input type="button" name="button" id="button" value="Examinar" onclick="javascript:subirimagen();"/></td>
         </tr>
         <tr valign="baseline">
-          <td nowrap="nowrap" align="right">Strlink:</td>
+          <td nowrap="nowrap" align="right">Link:</td>
           <td><input type="text" name="strlink" value="" size="32" /></td>
         </tr>
         <tr valign="baseline">
-          <td nowrap="nowrap" align="right">Intestado:</td>
+          <td nowrap="nowrap" align="right">Estado:</td>
           <td><select name="intestado">
             <option value="1" <?php if (!(strcmp(1, ""))) {echo "SELECTED";} ?>>Activado</option>
             <option value="0" <?php if (!(strcmp(0, ""))) {echo "SELECTED";} ?>>Desactivado</option>

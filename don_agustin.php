@@ -47,7 +47,7 @@ $totalRows_Recordset1 = mysql_num_rows($Recordset1);
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <!-- InstanceBeginEditable name="doctitle" -->
 <?php $menuseleccionado=4;?>
-<title>Documento sin título</title>
+<title>Don Agustin|Constructora Alcantara</title>
 <!-- InstanceEndEditable -->
 <!-- InstanceBeginEditable name="head" -->
 <!-- InstanceEndEditable -->
@@ -72,8 +72,8 @@ $totalRows_Recordset1 = mysql_num_rows($Recordset1);
   <div class="content"><!-- InstanceBeginEditable name="cuerpo" --><br />
 
     <h1><img src="images/iconespiral.png" width="22" height="22" /> Condominio Don Agust&iacute;n</h1>
-    <div>
-     este proyecto presenta una alternativa diferente para la vida en familia, se encuentra ubicado en el sector de las rastras a un lado del  Conjunto Residencial Tejas Verdes, posee una entrada controlada tanto para vehículos como para persona. Las viviendas tienen una arquitectura clásica y elegante, con 140 mts2 construidos emplazados en 289 mts2 de terreno aproximados, en su interior  cuenta con una amplia cocina, cuatro dormitorios, principal en suite, tres baños,  living y comedor separados, además de finas terminaciones en todos sus recintos, lo que ofrece espacios cálidos e independientes. En el exterior cuenta con áreas  verdes y riego automático, y una hermosa piscina que permite disfrutar del tranquilo entorno. 
+    <div class="texto">
+     <p>Este proyecto presenta una alternativa diferente para la vida en familia, se encuentra ubicado en el sector de las rastras a un lado del  <a href="tejas_verdes.php" class="active">Conjunto Residencial Tejas Verdes</a>, posee una entrada controlada tanto para vehículos como para persona. Las viviendas tienen una arquitectura clásica y elegante, con 140 mts2 construidos emplazados en 289 mts2 de terreno aproximados, en su interior  cuenta con una amplia cocina, cuatro dormitorios, principal en suite, tres baños,  living y comedor separados, además de finas terminaciones en todos sus recintos, lo que ofrece espacios cálidos e independientes. En el exterior cuenta con áreas  verdes y riego automático, y una hermosa piscina que permite disfrutar del tranquilo entorno. </p>
 
 </div><br />
 

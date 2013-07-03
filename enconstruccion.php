@@ -47,7 +47,7 @@ $totalRows_datoscont = mysql_num_rows($datoscont);
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <!-- InstanceBeginEditable name="doctitle" -->
 <?php $menuseleccionado=4;?>
-<title>Documento sin título</title>
+<title>Proyectos en Construccion|Constructora Alcantara</title>
 <!-- InstanceEndEditable -->
 <!-- InstanceBeginEditable name="head" -->
 <!-- InstanceEndEditable -->

@@ -70,7 +70,7 @@ $totalRows_departamentos = mysql_num_rows($departamentos);
   
   
   </script>
-    <h1>Lista de departamentos</h1>
+    <h1>Lista de Departamentos</h1>
     <p><a href="departamento_add.php"><img src="../iconos/agregar.png" width="16" height="16" />Añadir departamento</a><br />
     </p>
     <p>&nbsp; </p>

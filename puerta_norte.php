@@ -47,7 +47,7 @@ $totalRows_Recordset1 = mysql_num_rows($Recordset1);
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <!-- InstanceBeginEditable name="doctitle" -->
 <?php $menuseleccionado=3;?>
-<title>Documento sin título</title>
+<title>Puerta Norte|Constructora Alcantara</title>
 <!-- InstanceEndEditable -->
 <!-- InstanceBeginEditable name="head" -->
 <!-- InstanceEndEditable -->
@@ -72,11 +72,11 @@ $totalRows_Recordset1 = mysql_num_rows($Recordset1);
   <div class="content"><!-- InstanceBeginEditable name="cuerpo" --><br />
 
     <h1><img src="images/iconespiral.png" width="22" height="22" /> Condominio Puerta Norte</h1>
-    <div>
-      Este condominio cuenta con viviendas de 105 m2 construidos, Living y comedor en diferentes niveles, baño de visitas, una amplia cocina equipada, y tres dormitorios en segundo piso, además cuenta con acceso controlado, estacionamientos de visitas y amplios espacios para el desarrollo de la vida en familia.
+    <div class="texto">
+      <p>Este condominio cuenta con viviendas de 105 m2 construidos, Living y comedor en diferentes niveles, baño de visitas, una amplia cocina equipada, y tres dormitorios en segundo piso, además cuenta con acceso controlado, estacionamientos de visitas y amplios espacios para el desarrollo de la vida en familia.</p>
       
-Cada casa cuenta con aéreas verdes terminadas y riego automático, estacionamiento propio, sistema de citofonía  y portero automático.
-Estas casas además tienen ventanas de termopanel y están revestidas interiormente en poligyp, sistema de aislación termo-acústica, que produce un ahorro en calefacción y aumento en el confort de la vivienda.
+<p>Cada casa cuenta con aéreas verdes terminadas y riego automático, estacionamiento propio, sistema de citofonía  y portero automático.</p>
+<p>Estas casas además tienen ventanas de termopanel y están revestidas interiormente en poligyp, sistema de aislación termo-acústica, que produce un ahorro en calefacción y aumento en el confort de la vivienda.</p>
 </div><br />
 
 

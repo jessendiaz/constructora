@@ -47,7 +47,7 @@ $totalRows_Recordset1 = mysql_num_rows($Recordset1);
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <!-- InstanceBeginEditable name="doctitle" -->
 <?php $menuseleccionado=4;?>
-<title>Documento sin título</title>
+<title>Tejas Verdes|Constructora Alcantara</title>
 <!-- InstanceEndEditable -->
 <!-- InstanceBeginEditable name="head" -->
 <!-- InstanceEndEditable -->
@@ -72,10 +72,10 @@ $totalRows_Recordset1 = mysql_num_rows($Recordset1);
   <div class="content"><!-- InstanceBeginEditable name="cuerpo" --><br />
 
     <h1><img src="images/iconespiral.png" width="22" height="22" /> Conjunto Residencial Tejas Verdes</h1>
-    <div>
-      Es un proyecto ubicado en el corazón de Las Rastras, sector exclusivo y de gran plusvalía. Con viviendas de 250 mts2 construidos  y emplazadas en terrenos de 560 mts2 aproximados.
-Estas viviendas cuentan con una arquitectura moderna, amplios espacios interiores y una distribución acogedora y confortable. La vivienda dispone de una amplia cocina, living y comedor independientes, 5 dormitorios , tres de ellos en suite, 5 baños y una amplia sala de estar, además cuenta con terrazas, balcones y una hermosa piscina que permiten disfrutar de la tranquilidad y naturaleza del sector.
-
+    <div class="texto">
+      <p>Es un proyecto ubicado en el corazón de Las Rastras, sector exclusivo y de gran plusvalía. Con viviendas de 250 mts2 construidos  y emplazadas en terrenos de 560 mts2 aproximados.</p>
+<p>Estas viviendas cuentan con una arquitectura moderna, amplios espacios interiores y una distribución acogedora y confortable. La vivienda dispone de una amplia cocina, living y comedor independientes, 5 dormitorios , tres de ellos en suite, 5 baños y una amplia sala de estar, además cuenta con terrazas, balcones y una hermosa piscina que permiten disfrutar de la tranquilidad y naturaleza del sector.
+</p>
 </div><br />
 
 

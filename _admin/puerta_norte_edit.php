@@ -100,15 +100,15 @@ $totalRows_datoimagen = mysql_num_rows($datoimagen);
     <form action="<?php echo $editFormAction; ?>" method="post" name="form1" id="form1">
       <table align="center">
         <tr valign="baseline">
-          <td width="93" align="right" nowrap="nowrap">Strimagen:</td>
+          <td width="93" align="right" nowrap="nowrap">Imagen:</td>
           <td width="341"><input type="text" name="strimagen" value="<?php echo htmlentities($row_datoimagen['strimagen'], ENT_COMPAT, 'iso-8859-1'); ?>" size="32" /><input type="button" name="button" id="button" value="Examinar" onclick="javascript:subirimagen();"/></td>
         </tr>
         <tr valign="baseline">
-          <td nowrap="nowrap" align="right">Strdescripcion:</td>
+          <td nowrap="nowrap" align="right">Descripcion:</td>
           <td><input type="text" name="strdescripcion" value="<?php echo htmlentities($row_datoimagen['strdescripcion'], ENT_COMPAT, 'iso-8859-1'); ?>" size="32" /></td>
         </tr>
         <tr valign="baseline">
-          <td nowrap="nowrap" align="right">Intestado:</td>
+          <td nowrap="nowrap" align="right">Estado:</td>
           <td><select name="intestado">
             <option value="1" <?php if (!(strcmp(1, htmlentities($row_datoimagen['intestado'], ENT_COMPAT, 'iso-8859-1')))) {echo "SELECTED";} ?>>Activado</option>
             <option value="0" <?php if (!(strcmp(0, htmlentities($row_datoimagen['intestado'], ENT_COMPAT, 'iso-8859-1')))) {echo "SELECTED";} ?>>Desactivado</option>

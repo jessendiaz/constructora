@@ -9,7 +9,7 @@
 <!-- InstanceBeginEditable name="doctitle" -->
 
 <?php $menuseleccionado=1;?>
-<title>Constructora Alcantara</title>
+<title>Home|Constructora Alcantara</title>
 <!-- InstanceEndEditable -->
 <!-- InstanceBeginEditable name="head" -->
 <style type="text/css">

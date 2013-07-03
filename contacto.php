@@ -39,6 +39,7 @@ $totalRows_departamento = mysql_num_rows($departamento);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+<link href="images/iconespiral.ico" type="image/x-icon" rel="shortcut icon" />
 <script src="SpryAssets/SpryValidationTextField.js" type="text/javascript"></script>
 <link href="SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css" />
 <link href="SpryAssets/SpryValidationTextarea.css" rel="stylesheet" type="text/css" />

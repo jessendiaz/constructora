@@ -13,7 +13,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <!-- InstanceBeginEditable name="doctitle" -->
 <?php $menuseleccionado=5;?>
-<title>Documento sin título</title>
+<title>Servicio Al Cliente|Constructora Alcantara</title>
 <!-- InstanceEndEditable -->
 <!-- InstanceBeginEditable name="head" -->
 <!-- InstanceEndEditable -->
@@ -38,10 +38,11 @@
   <div class="content"><!-- InstanceBeginEditable name="cuerpo" --><br />
 
     <h1><img src="images/iconespiral.png" width="22" height="22" /> Servicio al cliente</h1>
-    <p>Estimado Cliente, Constructora Alcántara Ltda. Pone a su disposición todos sus esfuerzos para dar solución a su problema, para orientarlo en uso y para dar los mejores consejos de la correcta mantención de su vivienda</p>
-    <p>Contáctese con nosotros y un profesional del área lo visitara.</p>
-    
-    <form action="enviar2.php" method="post" id="form1" name="form1">
+    <div class="texto">Estimado Cliente, Constructora Alcántara Ltda. Pone a su disposición todos sus esfuerzos para dar solución a su problema, para orientarlo en uso y para dar los mejores consejos de la correcta mantención de su vivienda.<br /><br />
+
+
+      <h4>Contáctese con nosotros y un profesional del área lo visitara.</h4></div>
+<form action="enviar2.php" method="post" id="form1" name="form1">
       <table width="579" border="0">
         <tr>
           <td width="255" align="right"><span class="obligatorio">*</span>Nombre Completo:</td>

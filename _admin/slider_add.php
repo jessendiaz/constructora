@@ -83,7 +83,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
 	  }
   
   </script>
-    <h1>A&ntilde;adir Imagen</h1>
+    <h1>A&ntilde;adir Imagen Slider</h1>
     <p>&nbsp;</p>
     <form action="<?php echo $editFormAction; ?>" method="post" name="form1" id="form1">
       <table align="center">

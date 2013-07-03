@@ -47,7 +47,7 @@ $totalRows_datosenventa = mysql_num_rows($datosenventa);
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <!-- InstanceBeginEditable name="doctitle" -->
 <?php $menuseleccionado=3;?>
-<title>Documento sin título</title>
+<title>Proyectos en Venta|Constructora Alcantara</title>
 <!-- InstanceEndEditable -->
 <!-- InstanceBeginEditable name="head" -->
 <!-- InstanceEndEditable -->

@@ -90,7 +90,7 @@ $totalRows_datodonagustin = mysql_num_rows($datodonagustin);
 	  }
   
   </script>
-    <h1>A&ntilde;adir Imagen</h1>
+    <h1>A&ntilde;adir Imagen Don Agustin</h1>
     <p>&nbsp;</p>
     <form action="<?php echo $editFormAction; ?>" method="post" name="form1" id="form1">
       <table align="center">

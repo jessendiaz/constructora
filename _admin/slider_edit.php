@@ -105,11 +105,11 @@ $totalRows_datoImagen = mysql_num_rows($datoImagen);
           <input type="button" name="button" id="button" value="Examinar" onclick="javascript:subirimagen();"/></td>
         </tr>
         <tr valign="baseline">
-          <td nowrap="nowrap" align="right">StrDescripcion:</td>
+          <td nowrap="nowrap" align="right">Descripcion:</td>
           <td><input type="text" name="strDescripcion" value="<?php echo htmlentities($row_datoImagen['strDescripcion'], ENT_COMPAT, 'iso-8859-1'); ?>" size="32" /></td>
         </tr>
         <tr valign="baseline">
-          <td nowrap="nowrap" align="right">IntEstado:</td>
+          <td nowrap="nowrap" align="right">Estado:</td>
           <td><select name="intEstado">
             <option value="1" <?php if (!(strcmp(1, htmlentities($row_datoImagen['intEstado'], ENT_COMPAT, 'iso-8859-1')))) {echo "SELECTED";} ?>>Activado</option>
             <option value="0" <?php if (!(strcmp(0, htmlentities($row_datoImagen['intEstado'], ENT_COMPAT, 'iso-8859-1')))) {echo "SELECTED";} ?>>Desactivado</option>

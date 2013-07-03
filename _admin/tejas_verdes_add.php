@@ -94,7 +94,7 @@ $totalRows_datotejasverdes = mysql_num_rows($datotejasverdes);
 	  }
   
   </script>
-    <h1>A&ntilde;adir Imagen</h1>
+    <h1>A&ntilde;adir Imagen Tejas Verdes</h1>
     <p>&nbsp;</p>
     <form action="<?php echo $editFormAction; ?>" method="post" name="form1" id="form1">
       <table align="center">

@@ -14,7 +14,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <!-- InstanceBeginEditable name="doctitle" -->
 <?php $menuseleccionado=2;?>
-<title>Documento sin título</title>
+<title>Empresa|Constructora Alcantara</title>
 <!-- InstanceEndEditable -->
 <!-- InstanceBeginEditable name="head" -->
 <!-- InstanceEndEditable -->
@@ -39,9 +39,11 @@
   <div class="content"><!-- InstanceBeginEditable name="cuerpo" --><br />
 
     <h1><img src="images/iconespiral.png" width="22" height="22" /> Empresa</h1>
-    <p>Constructora Alcántara Ltda. Es una empresa joven, que nace en la ciudad de Talca en el año 2006, dedicada principalmente a la construcción de viviendas. Nuestro norte es entregar a nuestros clientes, viviendas con arquitecturas exclusivas y únicas para el mercado de la región, de manera de marcar un estilo diferente en todos nuestros proyectos,  además de conformar espacios amplios y eficientes para mejorar la vida en familia.</p>
-<p>Hoy utilizamos en nuestros proyectos materiales con tecnologías de punta, tanto para aumentar la durabilidad, como para mejorar térmicamente nuestras viviendas, lo que las hace ecológicamente mas sustentables, todo esto sin olvidar la calidad y elegancia en nuestras terminaciones.</p>
-<p>En Constructora Alcántara Ltda. Proponemos un trabajo serio y responsable a cada proyecto que ofrecemos, entregando a nuestros clientes un respaldo de un excelente servicio y atención.</p>
+    <div class="texto">
+  <p>Constructora Alcántara Ltda. Es una empresa joven, que nace en la ciudad de Talca en el año 2006, dedicada principalmente a la construcción de viviendas. Nuestro norte es entregar a nuestros clientes, viviendas con arquitecturas exclusivas y únicas para el mercado de la región, de manera de marcar un estilo diferente en todos nuestros proyectos,  además de conformar espacios amplios y eficientes para mejorar la vida en familia.</p>
+  <p>Hoy utilizamos en nuestros proyectos materiales con tecnologías de punta, tanto para aumentar la durabilidad, como para mejorar térmicamente nuestras viviendas, lo que las hace ecológicamente más sustentables, todo esto sin olvidar la calidad y elegancia en nuestras terminaciones.</p>
+  <p>En Constructora Alcántara Ltda. Proponemos un trabajo serio y responsable a cada proyecto que ofrecemos, entregando a nuestros clientes un respaldo de un excelente servicio y atención.</p>
+    </div>
 
   <!-- InstanceEndEditable -->
     <!-- end .content -->

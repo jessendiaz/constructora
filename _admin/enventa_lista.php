@@ -68,7 +68,7 @@ $totalRows_enventa = mysql_num_rows($enventa);
   
   
   </script>
-    <h1>Lista de Proyectos en venta</h1>
+    <h1>Lista de Proyectos en Venta</h1>
     <p><a href="enventa_add.php"><img src="../iconos/agregar.png" width="16" height="16" />Añadir Proyecto</a><br />
     </p>
     <p>&nbsp; </p>
