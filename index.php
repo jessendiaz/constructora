@@ -37,7 +37,7 @@ a:active {
 <!-- InstanceBeginEditable name="Cabecera" -->
 <div class="header">
   <?php include("includes/cabecera.php"); ?>
-  Aca poner eslogan de la empresa y alguna otra imagen para rellenar la cabecera....
+  
   <div class="clearfloat"></div>  
   
   <!-- end .header -->

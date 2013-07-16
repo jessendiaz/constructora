@@ -27,7 +27,7 @@
 <!-- InstanceBeginEditable name="Cabecera" -->
 <div class="header">
   <?php include("includes/cabecera.php"); ?>
-  Aca poner eslogan de la empresa y alguna otra imagen para rellenar la cabecera....
+  
   <div class="clearfloat"></div>
   <!-- end .header -->
 </div>
@@ -37,7 +37,7 @@
 <div class="container">
   <div class="content"><!-- InstanceBeginEditable name="cuerpo" --><br />
 
-    <h1><img src="images/iconespiral.png" width="22" height="22" /> Servicio al cliente</h1>
+    <h1><img src="images/iconespiral.png" width="22" height="22" /> Servicio al Cliente</h1>
     <div class="texto">Estimado Cliente, Constructora Alcántara Ltda. Pone a su disposición todos sus esfuerzos para dar solución a su problema, para orientarlo en uso y para dar los mejores consejos de la correcta mantención de su vivienda.<br /><br />
 
 

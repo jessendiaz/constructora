@@ -4,6 +4,7 @@ body {
 	margin: 0;
 	padding: 0;
 	color: #000;
+	width: 1349px;
 }
 .menupie{
 	background-color: #FFF;
@@ -241,7 +242,12 @@ p{
 	text-align: justify;
 	text-indent:50px;
 	}
-	
+	.video{
+	width: 790px;
+	padding-left: 150px;
+	padding-right: 50px;
+	padding-bottom: 30px;
+	}
 	
 form
 {

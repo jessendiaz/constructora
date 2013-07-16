@@ -61,7 +61,7 @@ $totalRows_Recordset1 = mysql_num_rows($Recordset1);
 <!-- InstanceBeginEditable name="Cabecera" -->
 <div class="header">
   <?php include("includes/cabecera.php"); ?>
-  Aca poner eslogan de la empresa y alguna otra imagen para rellenar la cabecera....
+ 
   <div class="clearfloat"></div>
   <!-- end .header -->
 </div>
@@ -86,6 +86,8 @@ $totalRows_Recordset1 = mysql_num_rows($Recordset1);
     <?php echo $row_Recordset1['strdescripcion']; ?></span></a>
   <?php } while ($row_Recordset1 = mysql_fetch_assoc($Recordset1)); ?>
 </div>
+<div class="clearfloat"></div>
+<div class="video"><iframe width="620" height="315" src="//www.youtube.com/embed/opeWhzk_MRQ" frameborder="0" allowfullscreen></iframe></div>
 
   <!-- InstanceEndEditable -->
     <!-- end .content -->
