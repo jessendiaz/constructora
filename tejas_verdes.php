@@ -82,9 +82,11 @@ $totalRows_Recordset1 = mysql_num_rows($Recordset1);
 
 <div class="img_content">
   <?php do { ?>
-  <a class="thumbnail" href="#thumb"><img src="documentos/img_tejasverdes/<?php echo $row_Recordset1['strimagen']; ?>" width="200px" height="200px" border="0" /><span><img src="documentos/img_tejasverdes/<?php echo $row_Recordset1['strimagen']; ?>" /><br />
+  <a class="thumbnail" href="#thumb"><img src="documentos/img_tejasverdes/<?php echo $row_Recordset1['strimagen']; ?>" width="790px" height="315px" border="0" /><span><img src="documentos/img_tejasverdes/<?php echo $row_Recordset1['strimagen']; ?>" />
+
     <?php echo $row_Recordset1['strdescripcion']; ?></span></a>
   <?php } while ($row_Recordset1 = mysql_fetch_assoc($Recordset1)); ?>
+  
 </div>
 <div class="clearfloat"></div>
 <div class="video"><iframe width="620" height="315" src="//www.youtube.com/embed/opeWhzk_MRQ" frameborder="0" allowfullscreen></iframe></div>
